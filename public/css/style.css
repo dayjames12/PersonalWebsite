@@ -2,9 +2,9 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border: 2px solid black;
     text-align: center;
-    margin: 30px 30px 30px 30px;
+    /* margin: 30px 30px 30px 30px; */
     border: 1 px solid black;
-    background-image: url(/images/backgroundImageForCsProject.jpg);
+    background-color: 474747;
     background-size: cover;
-    padding: 100px;
+    padding: 1px;
 }
