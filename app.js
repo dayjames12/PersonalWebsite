@@ -24,6 +24,12 @@ app.set('view engine', 'hbs');
 var routes = require('./routes/routes.js')
 app.use('/', routes)
 
-app.listen(8000, function(){
-    console.log('listening on port 8000...')
+
+var server = require('http').createServer(app)
+server.listen(80, function(){
+  console.log('listening...')
 })
+
+// app.listen(8000, function(){
+//     console.log('listening on port 8000...')
+// })
