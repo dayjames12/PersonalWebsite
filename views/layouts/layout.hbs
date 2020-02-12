@@ -9,44 +9,36 @@
     <script type="text/javascript" src="/javascript/file.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script src="jquery-3.4.1.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        // Check for click events on the navbar burger icon
-        $(".navbar-burger").click(function() {
-
-            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-            $(".navbar-burger").toggleClass("is-active");
-            $(".navbar-menu").toggleClass("is-active");
-
-        });
-    });
-</script>
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
 
     <title>{{{title}}}</title>
 </head>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar has-background-primary" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a href="/">
                 <img src="/images/logos/logo-crop.png" alt="James Day" width="112" height="28">
             </a>
 
-            <a role="button" class="navbar-burger burger is-active" aria-label="menu" aria-expanded="false">
+            <a role="button" class="navbar-burger burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>            
             </a>
         </div>  
 
-        <div class="navbar-menu is-active">
+        <div class="navbar-menu" id="navMenu">
             <a class="navbar-item" href="/"> Home </a>
             <a class="navbar-item" href="/about"> About </a>
             <a class="navbar-item" href="/projects"> Projects </a>
         </div>      
-
     </nav>
 
-    <body>
+    <body class="has-background-grey-dark">
         {{{body}}}
     </body>
 </html>
