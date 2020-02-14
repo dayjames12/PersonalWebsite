@@ -24,6 +24,13 @@ app.set('view engine', 'hbs');
 var routes = require('./routes/routes.js')
 app.use('/', routes)
 
+app.use(function(req,res,next){
+  if (req.accepts('html')){
+    res.render('404', {title : 'Not Found', url: req.url})
+    return
+  }
+})
+
 var server = require('http').createServer(app)
 var port = 3000
 server.listen(port, function(){

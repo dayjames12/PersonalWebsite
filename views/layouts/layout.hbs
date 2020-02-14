@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <script type="text/javascript" src="/javascript/file.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous">
-    </script>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-
-    <title>{{{title}}}</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>{{title}}</title>
+	<script type="text/javascript" src="/javascript/file.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous">
+	</script>
+	<link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-    <nav class="navbar has-background-primary" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a href="/">
-                <img src="/images/logos/logo-crop.png" alt="James Day" width="112" height="28">
-            </a>
 
-            <a role="button" class="navbar-burger burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>            
-            </a>
-        </div>  
+{{!-- nav bar --}}
+<nav class="navbar has-background-primary" role="navigation" aria-label="main navigation">
+	<div class="navbar-brand">
+		<a href="/">
+			<img src="/images/logos/logo-crop2.png" alt="James Day" width="112" height="28">
+		</a>
 
-        <div class="navbar-menu" id="navMenu">
-            <a class="navbar-item" href="/"> Home </a>
-            <a class="navbar-item" href="/about"> About </a>
-            <a class="navbar-item" href="/projects"> Projects </a>
-        </div>      
-    </nav>
+		<a role="button" class="navbar-burger burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>            
+		</a>
+	</div>  
 
-    <body class="has-background-grey-dark">
-        {{{body}}}
-    </body>
+	<div class="navbar-menu" id="navMenu">
+		<a class="navbar-item" href="/"> Home </a>
+		<a class="navbar-item" href="/about"> About </a>
+		<a class="navbar-item" href="/projects"> Projects </a>
+	</div>      
+</nav>
+
+{{!-- body --}}
+	<body class="has-background-grey-light">
+		{{{body}}}
+	</body>
 </html>
 
