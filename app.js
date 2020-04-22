@@ -21,9 +21,30 @@ app.engine('hbs', hbs({
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs');
 
+//routes
 var routes = require('./routes/routes.js')
 app.use('/', routes)
 
+//database
+var mysql = require('mysql')
+var connection = mysql.createConnection({
+    host : 'RGB-AIR',
+    user : 'root',
+    password: 'Whiskey12!',
+    database : 'dealership'
+})
+
+connection.connect(function(err) {
+  if (err) {
+    console.error('error connecting: ' + err.stack);
+    return;
+  }
+
+  console.log('connected as id ' + connection.threadId);
+});
+connection.end()
+
+// 404 error handling
 app.use(function(req,res,next){
   if (req.accepts('html')){
     res.render('404', {title : 'Not Found', url: req.url})
@@ -31,6 +52,7 @@ app.use(function(req,res,next){
   }
 })
 
+// port
 var server = require('http').createServer(app)
 var port = 3000
 server.listen(port, function(){
