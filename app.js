@@ -4,11 +4,13 @@ var bodyParser = require('body-parser')
 var hbs = require('express-handlebars')
 var path = require('path')
 var morgan = require('morgan')
+var mysql = require('mysql')
 
 var app = express()
 
 app.use(morgan('dev'))
 app.use(cookieParser())
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true }))
 
 app.use(express.static(__dirname + '/public'));
@@ -26,23 +28,16 @@ var routes = require('./routes/routes.js')
 app.use('/', routes)
 
 //database
-var mysql = require('mysql')
 var connection = mysql.createConnection({
-    host : 'RGB-AIR',
+    host : 'localhost',
     user : 'root',
-    password: 'Whiskey12!',
-    database : 'dealership'
+    database : 'Dealership'
 })
 
-connection.connect(function(err) {
-  if (err) {
-    console.error('error connecting: ' + err.stack);
-    return;
-  }
-
-  console.log('connected as id ' + connection.threadId);
-});
-connection.end()
+connection.connect(function(error) {
+	if (error) throw error
+	console.log('You are now connected to the database')
+})
 
 // 404 error handling
 app.use(function(req,res,next){
