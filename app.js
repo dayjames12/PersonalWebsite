@@ -23,10 +23,11 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs');
 
 //routes
-const routes = require('./routes/routes.js'),
-    dbRoutes = require("./routes/database.js")
-app.use('/', routes)
-app.use('/db', dbRoutes)
+// const routes = require('./routes/routes.js'),
+//     dbRoutes = require("./routes/database.js")
+// app.use('/', routes)
+// app.use('/db', dbRoutes)
+app.use(require('./controllers/app'))
 
 //database
 const connection = mysql.createConnection({
@@ -51,6 +52,4 @@ app.use(function(req,res,next){
 // port
 const server = require('http').createServer(app),
     port = 3000
-server.listen(port, function(){
-    console.log('listening on ' + port + '...')
-})
+server.listen(port, () => console.log(`Listening on ${port}...`))
