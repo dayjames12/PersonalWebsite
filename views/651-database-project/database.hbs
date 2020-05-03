@@ -1,0 +1,147 @@
+<body>
+  {{!-- title --}}
+  <section class="hero is-dark has-text-left">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          CSC 651 Database Final Course Project
+        </h1>
+        <h1 class="subtitle">
+          <strong>Student Name: James Day</strong><br>
+        	<strong>Student Id: 918587415</strong><br>
+        	<strong>Student Email: jday6@mail.sfsu.edu</strong>
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  {{!-- main section--}}
+  <section>
+    <div class="section">
+      <div class="block">
+        <p class="content is-medium has-background-white">
+          Create Account <br>
+          Login <br>
+          Search <br>
+          Insert <br>
+          Update <br>
+          Delete <br>
+          Exit (logout?)
+        </p>
+      </div>
+
+      {{!-- pagination --}}
+      <div class="block">
+        <nav class="pagination">
+          <a href="" class="pagination-previous" disabled>Previous</a>
+          <a href="" class="pagination-next">Next</a>
+            <ul class="pagination-list">
+              <li>
+                <a href="" class="pagination-link is-current">1</a>
+              </li>
+              <li>
+                <a href="" class="pagination-link">2</a>              
+              </li>
+              <li>
+                <a href="" class="pagination-link">3</a>              
+              </li>            
+            </ul>
+        </nav>
+      </div>
+
+      {{!-- level --}}
+      <div class="block">
+        <nav class="level">
+          {{!-- left side --}}
+          <div class="level-left">
+            <p class="level-item"><a href=""><strong>Insert</strong></a></p>
+            <p class="level-item"><a href="">Update</a></p>
+            <p class="level-item"><a href="">Delete</a></p>
+          </div>
+          {{!-- right side --}}
+          <div class="level-right">
+            <div class="level-item">
+              <div class="field">
+                <p class="control">
+                  <input type="text" class="input" placeholder="Search database...">
+                </p>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      {{!-- form  --}}
+      <div class="block">
+        <form action="">
+          <div class="field">
+            <label class="label">Name</label>
+            <input type="text" class="input" placeholder="Enter name">
+          </div>
+
+          <div class="field">
+            <label class="label">with danger</label>
+            <input type="text" class="input is-danger" placeholder="Enter name">
+          </div>
+
+          <div class="field">
+            <label class="label">with success</label>
+            <input type="text" class="input is-success" placeholder="Enter name">
+          </div>                    
+
+          <div class="field">
+            <label class="label">Tables</label>
+            <p class="control">
+              <span class="select">
+                <select>
+                  <option>Select dropdown</option>
+                  <option>Simple</option>
+                  <option>Standard</option>
+                  <option>Super</option>
+                </select>
+              </span>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      {{!-- tables --}}
+      <div class="block">
+        <table class="table is-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>James Day</td>
+              <td>james@gmail.com</td>
+              <td>111-111-1111</td>
+            </tr>
+            <tr>
+              <td>Heaven Zeen</td>
+              <td>heaven@gmail.com</td>
+              <td>222-222-2222</td>
+            </tr>
+            <tr class="is-selected">
+              <td>test1</td>
+              <td>test1@gmail.com</td>
+              <td>333-333-3333</td>
+            </tr>      
+            <tr>
+              <td>test2</td>
+              <td>test2@gmail.com</td>
+              <td>444-444-4444</td>
+            </tr>                    
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </section>
+
+</body>

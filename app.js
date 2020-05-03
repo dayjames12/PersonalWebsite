@@ -23,11 +23,8 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs');
 
 //routes
-// const routes = require('./routes/routes.js'),
-//     dbRoutes = require("./routes/database.js")
-// app.use('/', routes)
-// app.use('/db', dbRoutes)
 app.use(require('./controllers/app'))
+app.use(require('./controllers/databaseProject'))
 
 //database
 const connection = mysql.createConnection({
