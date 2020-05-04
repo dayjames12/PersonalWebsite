@@ -1,17 +1,15 @@
 <body>
   {{!-- title --}}
   <section class="hero is-dark has-text-left">
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title">
-          CSC 651 Database Final Course Project
-        </h1>
-        <h1 class="subtitle">
-          <strong>Student Name: James Day</strong><br>
-        	<strong>Student Id: 918587415</strong><br>
-        	<strong>Student Email: jday6@mail.sfsu.edu</strong>
-        </h1>
-      </div>
+    <div class="hero-body is-dark">
+      <h1 class="title">
+        CSC 651 Database Final Course Project
+      </h1>
+      <h1 class="subtitle">
+        <strong>Student Name: James Day</strong><br>
+        <strong>Student Id: 918587415</strong><br>
+        <strong>Student Email: jday6@mail.sfsu.edu</strong>
+      </h1>
     </div>
   </section>
 
@@ -73,10 +71,11 @@
 
       {{!-- form  --}}
       <div class="block">
-        <form action="">
+        <form id="databaseForm">
           <div class="field">
             <label class="label">Name</label>
-            <input type="text" class="input" placeholder="Enter name">
+            <input type="text" class="input data" placeholder="Enter name">
+            <button class="button is-success is-outlined" type="submit">Submit</button>
           </div>
 
           <div class="field">
@@ -145,3 +144,5 @@
   </section>
 
 </body>
+
+<script type="text/javascript" src="/javascript/database.js"></script>
