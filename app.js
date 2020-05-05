@@ -4,9 +4,10 @@ const express = require('express'),
     hbs = require('express-handlebars'),
     path = require('path'),
     morgan = require('morgan'),
-    mysql = require('mysql'),
+    // mysql = require('mysql'),
     app = express()
 
+// middleware
 app.use(morgan('dev'))
 app.use(cookieParser())
 app.use(bodyParser.json())
@@ -23,20 +24,20 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs');
 
 //routes
-app.use(require('./controllers/app'))
+app.use(require('./routes/app'))
 app.use(require('./controllers/databaseProject'))
 
-//database
-const connection = mysql.createConnection({
-    host : 'localhost',
-    user : 'root',
-    database : 'Dealership'
-})
+// //database
+// const db = mysql.createConnection({
+//     host : 'localhost',
+//     user : 'root',
+//     database : 'Dealership'
+// })
 
-connection.connect(function(error) {
-	if (error) throw error
-	console.log('You are now connected to the database')
-})
+// db.connect(function(error) {
+// 	if (error) throw error
+// 	console.log('MySQL connected...')
+// })
 
 // 404 error handling
 app.use(function(req,res,next){
@@ -50,3 +51,5 @@ app.use(function(req,res,next){
 const server = require('http').createServer(app),
     port = 3000
 server.listen(port, () => console.log(`Listening on ${port}...`))
+
+module.exports = db

@@ -16,7 +16,7 @@
   {{!-- main section--}}
   <section>
     <div class="section">
-      <div class="block">
+      {{!-- <div class="block">
         <p class="content is-medium has-background-white">
           Create Account <br>
           Login <br>
@@ -26,35 +26,20 @@
           Delete <br>
           Exit (logout?)
         </p>
-      </div>
-
-      {{!-- pagination --}}
-      <div class="block">
-        <nav class="pagination">
-          <a href="" class="pagination-previous" disabled>Previous</a>
-          <a href="" class="pagination-next">Next</a>
-            <ul class="pagination-list">
-              <li>
-                <a href="" class="pagination-link is-current">1</a>
-              </li>
-              <li>
-                <a href="" class="pagination-link">2</a>              
-              </li>
-              <li>
-                <a href="" class="pagination-link">3</a>              
-              </li>            
-            </ul>
-        </nav>
-      </div>
+      </div> --}}
 
       {{!-- level --}}
       <div class="block">
         <nav class="level">
           {{!-- left side --}}
           <div class="level-left">
+            <p class="level-item"><a href="">Create Account</a></p>
+            <p class="level-item"><a href="">Login</a></p>
+            <p class="level-item"><a href="">Search</a></p>
             <p class="level-item"><a href=""><strong>Insert</strong></a></p>
             <p class="level-item"><a href="">Update</a></p>
             <p class="level-item"><a href="">Delete</a></p>
+            <p class="level-item"><a href="">Exit</a></p>
           </div>
           {{!-- right side --}}
           <div class="level-right">
@@ -71,38 +56,116 @@
 
       {{!-- form  --}}
       <div class="block">
-        <form id="databaseForm">
-          <div class="field">
-            <label class="label">Name</label>
-            <input type="text" class="input data" placeholder="Enter name">
-            <button class="button is-success is-outlined" type="submit">Submit</button>
-          </div>
 
+        <form id="insertTableForm">
           <div class="field">
-            <label class="label">with danger</label>
-            <input type="text" class="input is-danger" placeholder="Enter name">
-          </div>
-
-          <div class="field">
-            <label class="label">with success</label>
-            <input type="text" class="input is-success" placeholder="Enter name">
-          </div>                    
-
-          <div class="field">
-            <label class="label">Tables</label>
+            <label class="label">Select Table for Insertion</label>
             <p class="control">
               <span class="select">
-                <select>
-                  <option>Select dropdown</option>
-                  <option>Simple</option>
-                  <option>Standard</option>
-                  <option>Super</option>
+                <select id="insert_table_select">
+                  <option value="blank" selected="selected"></option>
+                  <option value="car">Car</option>
+                  <option value="car_features">Car Features</option>
+                  <option value="car_type">Car Type</option>
+                  <option value="customer">Customer</option>
+                  <option value="customer_preference">Customer Preference</option>
+                  <option value="employee">Employee</option>
+                  <option value="loaner_cars">Loaner Cars</option>                  
+                  <option value="mechanic">Mechanic</option>
+                  <option value="parts">Parts</option>
+                  <option value="parts_employee">Parts Employee</option>
+                  <option value="parts_used">Parts Used</option>
+                  <option value="rented_cars">Rented Cars</option>
+                  <option value="sales">Sales</option>            
+                  <option value="sales_employee">Sales Employee</option>                  
+                  <option value="service_manager">Service Manager</option>                  
+                  <option value="trade_in">Trade In</option>                  
                 </select>
               </span>
             </p>
           </div>
         </form>
+
+        {{!-- blank form --}}
+        <form name="blank" id="blank"></form>
+
+        {{!-- car insert form --}}
+        <form name="car" id="car" style="display:none">
+          <div class="field">
+            <label class="label">License</label>
+            <input type="text" class="input data" placeholder="Enter License">
+          </div>
+
+          <div class="field">
+            <label class="label">Miles</label>
+            <input type="text" class="input data" placeholder="Enter Miles">
+          </div>
+
+          <div class="field">
+            <label class="label">carTypeID</label>
+            <input type="text" class="input data" placeholder="Enter Car Type ID">
+          </div>
+        </form>   
+
+        {{!-- car_features insert form --}}
+        <form name="car_features" id="car_features" style="display:none">
+          <div class="field">
+            <label class="label">License</label>
+            <input type="text" class="input data" placeholder="Enter License">
+          </div>
+
+          <div class="field">
+            <label class="label">Miles</label>
+            <input type="text" class="input data" placeholder="Enter Miles">
+          </div>
+
+          <div class="field">
+            <label class="label">carTypeID</label>
+            <input type="text" class="input data" placeholder="Enter Car Type ID">
+          </div>
+        </form>
+
+        {{!-- car insert form --}}
+        <form name="car" id="car" style="display:none">
+          <div class="field">
+            <label class="label">License</label>
+            <input type="text" class="input data" placeholder="Enter License">
+          </div>
+
+          <div class="field">
+            <label class="label">Miles</label>
+            <input type="text" class="input data" placeholder="Enter Miles">
+          </div>
+
+          <div class="field">
+            <label class="label">carTypeID</label>
+            <input type="text" class="input data" placeholder="Enter Car Type ID">
+          </div>
+        </form>                
+
+        {{!-- form examples --}}
+        {{!-- <form> --}}
+          {{!-- <div class="field"> --}}
+            {{!-- <label class="label">Name</label> --}}
+            {{!-- <input type="text" class="input data" placeholder="Enter name"> --}}
+            {{!-- <button class="button is-success is-outlined" type="submit">Submit</button> --}}
+          {{!-- </div> --}}
+          
+          {{!-- danger form field example --}}
+          {{!-- <div class="field"> --}}
+            {{!-- <label class="label">with danger</label> --}}
+            {{!-- <input type="text" class="input is-danger" placeholder="Enter name"> --}}
+          {{!-- </div> --}}
+
+          {{!-- success form field example --}}
+          {{!-- <div class="field"> --}}
+            {{!-- <label class="label">with success</label> --}}
+            {{!-- <input type="text" class="input is-success" placeholder="Enter name"> --}}
+          {{!-- </div>                     --}}
+        {{!-- </form> --}}
+        
       </div>
+
 
       {{!-- tables --}}
       <div class="block">
@@ -137,7 +200,27 @@
             </tr>                    
           </tbody>
         </table>
+      </div>      
+
+      {{!-- pagination --}}
+      <div class="block">
+        <nav class="pagination">
+          <a href="" class="pagination-previous" disabled>Previous</a>
+          <a href="" class="pagination-next">Next</a>
+            <ul class="pagination-list">
+              <li>
+                <a href="" class="pagination-link is-current">1</a>
+              </li>
+              <li>
+                <a href="" class="pagination-link">2</a>              
+              </li>
+              <li>
+                <a href="" class="pagination-link">3</a>              
+              </li>            
+            </ul>
+        </nav>
       </div>
+
 
     </div>
 
@@ -146,3 +229,4 @@
 </body>
 
 <script type="text/javascript" src="/javascript/database.js"></script>
+
