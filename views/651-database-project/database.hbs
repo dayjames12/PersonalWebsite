@@ -54,10 +54,10 @@
         </nav>
       </div>
 
-      {{!-- form  --}}
-      <div class="block">
+      {{!-- ALL Insert Forms  --}}
+      <div class="block">      
 
-        <form id="insertTableForm">
+        <form id="insert_table_form" style="padding-bottom:10px;">
           <div class="field">
             <label class="label">Select Table for Insertion</label>
             <p class="control">
@@ -93,55 +93,355 @@
         <form name="car" id="car" style="display:none">
           <div class="field">
             <label class="label">License</label>
-            <input type="text" class="input data" placeholder="Enter License">
+            <input type="text" class="input" placeholder="Enter License">
           </div>
 
           <div class="field">
             <label class="label">Miles</label>
-            <input type="text" class="input data" placeholder="Enter Miles">
+            <input type="text" class="input" placeholder="Enter Miles">
           </div>
 
           <div class="field">
             <label class="label">carTypeID</label>
-            <input type="text" class="input data" placeholder="Enter Car Type ID">
+            <input type="text" class="input" placeholder="Enter Car Type ID">
+          </div>
+
+          <div class="field">
+            <button class="button is-outlined is-success">Submit</button>
           </div>
         </form>   
 
         {{!-- car_features insert form --}}
         <form name="car_features" id="car_features" style="display:none">
           <div class="field">
-            <label class="label">License</label>
-            <input type="text" class="input data" placeholder="Enter License">
+            <label class="label">Car Type ID</label>
+            <input type="text" class="input" placeholder="Enter Car Type ID">
           </div>
 
           <div class="field">
-            <label class="label">Miles</label>
-            <input type="text" class="input data" placeholder="Enter Miles">
+            <label class="label">Feature Name</label>
+            <input type="text" class="input" placeholder="Enter Feature Name">
           </div>
 
           <div class="field">
-            <label class="label">carTypeID</label>
-            <input type="text" class="input data" placeholder="Enter Car Type ID">
+            <label class="label">Cost</label>
+            <input type="text" class="input" placeholder="Enter Cost">
           </div>
+
+          <div class="field">
+            <label class="label">Description</label>
+            <input type="textArea" class="input" placeholder="Enter Description">
+          </div>
+
+          <div class="field">
+            <button class="button is-outlined is-success">Submit</button>
+          </div>          
         </form>
 
-        {{!-- car insert form --}}
-        <form name="car" id="car" style="display:none">
+        {{!-- car_type form --}}
+        <form name="car_type" id="car_type" style="display:none">
           <div class="field">
-            <label class="label">License</label>
-            <input type="text" class="input data" placeholder="Enter License">
+            <label class="label">Year</label>
+            <input type="text" class="input" placeholder="Enter Year">
           </div>
 
           <div class="field">
-            <label class="label">Miles</label>
-            <input type="text" class="input data" placeholder="Enter Miles">
+            <label class="label">Make</label>
+            <input type="text" class="input" placeholder="Enter Make">
           </div>
 
           <div class="field">
-            <label class="label">carTypeID</label>
-            <input type="text" class="input data" placeholder="Enter Car Type ID">
+            <label class="label">Model</label>
+            <input type="text" class="input" placeholder="Enter Model">
           </div>
-        </form>                
+
+          <div class="field">
+            <label class="label">Color</label>
+            <input type="text" class="input" placeholder="Enter Color">
+          </div>          
+
+          <div class="field">
+            <button class="button is-outlined is-success">Submit</button>
+          </div>          
+        </form>       
+
+        {{!-- customer insert form --}}
+        <form name="customer" id="customer" style="display:none">
+          <div class="field">
+            <label class="label">Name</label>
+            <input type="text" class="input" placeholder="Enter Name">
+          </div>
+
+          <div class="field">
+            <label class="label">Address</label>
+            <input type="text" class="input" placeholder="Enter Address">
+          </div>
+
+          <div class="field">
+            <label class="label">Phone Number</label>
+            <input type="text" class="input" placeholder="Enter Phone Number">
+          </div>
+
+          <div class="field">
+            <button class="button is-outlined is-success">Submit</button>
+          </div>
+        </form>   
+
+        {{!-- customer_preference insert form --}}
+        <form name="customer_preference" id="customer_preference" style="display:none">
+          <div class="field">
+            <label class="label">Customer ID</label>
+            <input type="text" class="input" placeholder="Enter Customer ID">
+          </div>
+
+          <div class="field">
+            <label class="label">Car Feature ID</label>
+            <input type="text" class="input" placeholder="Enter Car Feature ID">
+          </div>
+
+          <div class="field">
+            <label class="label">Budget</label>
+            <input type="text" class="input" placeholder="Enter Budget">
+          </div>
+
+          <div class="field">
+            <button class="button is-outlined is-success">Submit</button>
+          </div>
+        </form>           
+
+        {{!-- employee insert form --}}
+        <form name="employee" id="employee" style="display:none">
+          <div class="field">
+            <label class="label">Employee Name</label>
+            <input type="text" class="input" placeholder="Enter Employee Name">
+          </div>
+
+          <div class="field">
+            <label class="label">Date of birth</label>
+            <input type="date" class="input" placeholder="Enter Miles">
+          </div>
+
+          <div class="field">
+            <label class="label">Hours</label>
+            <input type="text" class="input" placeholder="Enter Hours">
+          </div>
+
+          <div class="field">
+            <button class="button is-outlined is-success">Submit</button>
+          </div>
+        </form>   
+
+        {{!-- loaner_cars insert form --}}
+        <form name="loaner_cars" id="loaner_cars" style="display:none">
+          <div class="field">
+            <label class="label">Car ID</label>
+            <input type="text" class="input" placeholder="Enter Car ID">
+          </div>
+
+          <div class="field">
+            <button class="button is-outlined is-success">Submit</button>
+          </div>
+        </form>   
+
+        {{!-- mechanic insert form --}}
+        <form name="mechanic" id="mechanic" style="display:none">
+          <div class="field">
+            <label class="label">Mechanic</label>
+            <input type="text" class="input" placeholder="Enter Employee ID">
+          </div>
+
+          <div class="field">
+            <button class="button is-outlined is-success">Submit</button>
+          </div>
+        </form> 
+
+        {{!-- parts insert form --}}
+        <form name="parts" id="parts" style="display:none">
+          <div class="field">
+            <label class="label">Part ID</label>
+            <input type="text" class="input" placeholder="Enter Part ID">
+          </div>
+
+          <div class="field">
+            <button class="button is-outlined is-success">Submit</button>
+          </div>
+        </form> 
+
+        {{!-- parts_employee insert form --}}
+        <form name="parts_employee" id="parts_employee" style="display:none">
+          <div class="field">
+            <label class="label">Employee ID</label>
+            <input type="text" class="input" placeholder="Enter Employee ID">
+          </div>
+
+          <div class="field">
+            <button class="button is-outlined is-success">Submit</button>
+          </div>
+        </form> 
+
+        {{!-- parts_used insert form --}}
+        <form name="parts_used" id="parts_used" style="display:none">
+          <div class="field">
+            <label class="label">Quantity</label>
+            <input type="text" class="input" placeholder="Enter Quantity">
+          </div>
+
+          <div class="field">
+            <label class="label">Cost</label>
+            <input type="text" class="input" placeholder="Enter Cost">
+          </div>
+
+          <div class="field">
+            <label class="label">Part ID</label>
+            <input type="text" class="input" placeholder="Enter Part ID">
+          </div>          
+
+          <div class="field">
+            <label class="label">Repair ID</label>
+            <input type="text" class="input" placeholder="Enter Repair ID">
+          </div>          
+
+          <div class="field">
+            <button class="button is-outlined is-success">Submit</button>
+          </div>
+        </form> 
+
+        {{!-- rented_cars insert form --}}
+        <form name="rented_cars" id="rented_cars" style="display:none">
+          <div class="field">
+            <label class="label">Customer ID</label>
+            <input type="text" class="input" placeholder="Enter Customer ID">
+          </div>
+
+          <div class="field">
+            <label class="label">Loaner Car ID</label>
+            <input type="text" class="input" placeholder="Enter Loaner Car ID">
+          </div>
+
+          <div class="field">
+            <button class="button is-outlined is-success">Submit</button>
+          </div>
+        </form>         
+
+        {{!-- repair insert form --}}
+        <form name="repair" id="repair" style="display:none">
+          <div class="field">
+            <label class="label">Description</label>
+            <input type="text" class="input" placeholder="Enter Description">
+          </div>
+
+          <div class="field">
+            <label class="label">Cost</label>
+            <input type="text" class="input" placeholder="Enter Cost">
+          </div>
+          
+          <div class="field">
+            <label class="label">Car ID</label>
+            <input type="text" class="input" placeholder="Enter Car ID">
+          </div>
+
+          <div class="field">
+            <label class="label">Mechanic ID</label>
+            <input type="text" class="input" placeholder="Enter Mechanic ID">
+          </div>
+
+          <div class="field">
+            <label class="label">Service Manager ID</label>
+            <input type="text" class="input" placeholder="Enter Service Manager ID">
+          </div>
+
+          <div class="field">
+            <label class="label">Customer ID</label>
+            <input type="text" class="input" placeholder="Enter Customer ID">
+          </div>
+
+          <div class="field">
+            <button class="button is-outlined is-success">Submit</button>
+          </div>
+        </form>   
+
+        {{!-- sales insert form --}}
+        <form name="sales" id="sales" style="display:none">
+          <div class="field">
+            <label class="label">Sales Employee ID</label>
+            <input type="text" class="input" placeholder="Enter Sales Employee ID">
+          </div>
+
+          <div class="field">
+            <label class="label">Parts Employee ID</label>
+            <input type="text" class="input" placeholder="Enter Parts Employee ID">
+          </div>
+          
+          <div class="field">
+            <label class="label">Customer ID</label>
+            <input type="text" class="input" placeholder="Enter Customer ID">
+          </div>
+
+          <div class="field">
+            <label class="label">Car ID</label>
+            <input type="text" class="input" placeholder="Enter Car ID">
+          </div>
+
+          <div class="field">
+            <label class="label">Trade In ID</label>
+            <input type="text" class="input" placeholder="Enter Trade In ID">
+          </div>
+
+          <div class="field">
+            <label class="label">Part ID</label>
+            <input type="text" class="input" placeholder="Enter Part ID">
+          </div>
+
+          <div class="field">
+            <button class="button is-outlined is-success">Submit</button>
+          </div>
+        </form>   
+
+        {{!-- sales_employee insert form --}}
+        <form name="sales_employee" id="sales_employee" style="display:none">
+          <div class="field">
+            <label class="label">Employee ID</label>
+            <input type="text" class="input" placeholder="Enter Employee ID">
+          </div>
+
+          <div class="field">
+            <button class="button is-outlined is-success">Submit</button>
+          </div>
+        </form>   
+
+        {{!-- service_manager insert form --}}
+        <form name="service_manager" id="service_manager" style="display:none">
+          <div class="field">
+            <label class="label">Employee ID</label>
+            <input type="text" class="input" placeholder="Enter Employee ID">
+          </div>
+
+          <div class="field">
+            <button class="button is-outlined is-success">Submit</button>
+          </div>
+        </form>   
+
+        {{!-- trade_in insert form --}}
+        <form name="trade_in" id="trade_in" style="display:none">
+          <div class="field">
+            <label class="label">Value</label>
+            <input type="text" class="input" placeholder="Enter Value">
+          </div>
+
+          <div class="field">
+            <label class="label">Customer ID</label>
+            <input type="text" class="input" placeholder="Enter Customer ID">
+          </div>
+          
+          <div class="field">
+            <label class="label">Car ID</label>
+            <input type="text" class="input" placeholder="Enter Car ID">
+          </div>
+
+          <div class="field">
+            <button class="button is-outlined is-success">Submit</button>
+          </div>
+        </form>                                                   
 
         {{!-- form examples --}}
         {{!-- <form> --}}

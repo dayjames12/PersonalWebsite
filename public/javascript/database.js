@@ -13,5 +13,6 @@
 // jquery to select different forms from dropdown menu to select proper fields to insnert per table 
 $("#insert_table_select").on("change", function() {
     $("#" + $(this).val()).show().siblings().hide()
+    $("#insert_table_form").show()  
 })
 
