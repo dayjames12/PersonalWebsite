@@ -127,24 +127,25 @@
         </form>
 
         {{!-- car insert form --}}
-        <form name="car" id="car" class="test_form" style="display:none">
+        <form action="/insertCar" method="POST" name="car" id="car" class="test_form" style="display:none">
           <div class="field">
             <label class="label">License</label>
-            <input type="text" id="caps" class="input test_data" placeholder="Enter License">
+            <input type="text" id="license" class="input" name="license" placeholder="Enter License"
+            oninput="forceUpperCase(event)">
           </div>
 
           <div class="field">
             <label class="label">Miles</label>
-            <input type="text" class="input test_data" placeholder="Enter Miles">
+            <input type="text" id="miles"class="input" name="mile" placeholder="Enter Miles">
           </div>
 
           <div class="field">
-            <label class="label">carTypeID</label>
-            <input type="text" class="input test_data" placeholder="Enter Car Type ID">
+            <label class="label">Car Type ID</label>
+            <input type="text" id="car_type_id"class="input" name="carTypeID" placeholder="Enter Car Type ID">
           </div>
 
           <div class="field">
-            <button class="button is-outlined is-success">Submit</button>
+            <button class="button is-outlined is-success" type="submit" value="submit">Submit</button>
           </div>
         </form>   
 
@@ -488,33 +489,40 @@
         <table class="table is-striped">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
+              <th>carID</th>
+              <th>license</th>
+              <th>miles</th>
+              <th>carTypeID</th>
             </tr>
           </thead>
 
           <tbody>
-            <tr>
-              <td>James Day</td>
-              <td>james@gmail.com</td>
-              <td>111-111-1111</td>
+
+
+            <!-- <tr>
+              <th>1</th>
+              <th>1234567</th>
+              <th>10000</th>
+              <th>2</th>
             </tr>
             <tr>
-              <td>Heaven Zeen</td>
-              <td>heaven@gmail.com</td>
-              <td>222-222-2222</td>
+              <th>2</th>
+              <th>1234567</th>
+              <th>20000</th>
+              <th>2</th>
             </tr>
             <tr class="is-selected">
-              <td>test1</td>
-              <td>test1@gmail.com</td>
-              <td>333-333-3333</td>
+              <th>3</th>
+              <th>1234567</th>
+              <th>30000</th>
+              <th>1</th>
             </tr>      
             <tr>
-              <td>test2</td>
-              <td>test2@gmail.com</td>
-              <td>444-444-4444</td>
-            </tr>                    
+              <th>4</th>
+              <th>1234567</th>
+              <th>40000</th>
+              <th>2</th>
+            </tr>                     -->
           </tbody>
 
         </table>

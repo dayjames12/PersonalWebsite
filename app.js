@@ -4,7 +4,6 @@ const express = require('express'),
     hbs = require('express-handlebars'),
     path = require('path'),
     morgan = require('morgan'),
-    // mysql = require('mysql'),
     app = express()
 
 // middleware
@@ -27,25 +26,13 @@ app.set('view engine', 'hbs');
 app.use(require('./routes/app'))
 app.use(require('./controllers/databaseProject'))
 
-// //database
-// const db = mysql.createConnection({
-//     host : 'localhost',
-//     user : 'root',
-//     database : 'Dealership'
-// })
-
-// db.connect(function(error) {
-// 	if (error) throw error
-// 	console.log('MySQL connected...')
-// })
-
 // 404 error handling
-app.use(function(req,res,next){
-    if (req.accepts('html')){
-        res.render('404', {title : 'Not Found', url: req.url})
-        return
-    }
-})
+// app.use(function(req,res,next){
+//     if (req.accepts('html')){
+//         res.render('404', {title : 'Not Found', url: req.url})
+//         return
+//     }
+// })
 
 // port
 const server = require('http').createServer(app),
@@ -53,3 +40,4 @@ const server = require('http').createServer(app),
 server.listen(port, () => console.log(`Listening on ${port}...`))
 
 module.exports = db
+module.exports = bodyParser
