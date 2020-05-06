@@ -1,7 +1,7 @@
 <body>
   {{!-- title --}}
-  <section class="hero is-dark has-text-left">
-    <div class="hero-body is-dark">
+  <section class="hero is-dark">
+    <div class="hero-body has-text-centered">
       <h1 class="title">
         CSC 651 Database Final Course Project
       </h1>
@@ -13,9 +13,48 @@
     </div>
   </section>
 
+  {{!-- Tabs Container  --}}
+  <div class="main container">
+    <div class="tabs is-centered">
+      <ul>
+        <li class="tab_links is-active" onclick="openTab(event,'search')"><a>Search</a></li>
+        <li class="tab_links" onclick="openTab(event,'insert')"><a>Insert</a></li>
+        <li class="tab_links" onclick="openTab(event,'update')"><a>Update</a></li>
+        <li class="tab_links" onclick="openTab(event,'delete')"><a>Delete</a></li>
+        <li class="tab_links" onclick="openTab(event,'account')"><a>Account</a></li>
+      </ul>
+    </div>
+
+    <div id="search" class="tab_content">
+      <h2 class="is-size-2"></h2>
+      <p>Search Content</p>
+    </div>
+
+    <div id="insert" class="tab_content">
+      <h2 class="is-size-2"></h2>
+      <p>Insert Content</p>
+    </div>
+
+    <div id="update" class="tab_content">
+      <h2 class="is-size-2"></h2>
+      <p>Update Content</p>
+    </div>
+
+    <div id="delete" class="tab_content">
+      <h2 class="is-size-2"></h2>
+      <p>Delete Content</p>
+    </div>
+
+    <div id="account" class="tab_content">
+      <h2 class="is-size-2"></h2>
+      <p>Account Content</p>
+    </div>
+
+  </div>
+
   {{!-- main section--}}
-  <section>
-    <div class="section">
+  <section class="section">
+    <div class="column is-three-fifths is-offset-one-fifth">
       {{!-- <div class="block">
         <p class="content is-medium has-background-white">
           Create Account <br>
@@ -29,10 +68,10 @@
       </div> --}}
 
       {{!-- level --}}
-      <div class="block">
-        <nav class="level">
+      {{!-- <div class="block">
+        <nav class="level"> --}}
           {{!-- left side --}}
-          <div class="level-left">
+          {{!-- <div class="level-left">
             <p class="level-item"><a href="">Create Account</a></p>
             <p class="level-item"><a href="">Login</a></p>
             <p class="level-item"><a href="">Search</a></p>
@@ -40,9 +79,9 @@
             <p class="level-item"><a href="">Update</a></p>
             <p class="level-item"><a href="">Delete</a></p>
             <p class="level-item"><a href="">Exit</a></p>
-          </div>
+          </div> --}}
           {{!-- right side --}}
-          <div class="level-right">
+          {{!-- <div class="level-right">
             <div class="level-item">
               <div class="field">
                 <p class="control">
@@ -52,14 +91,14 @@
             </div>
           </div>
         </nav>
-      </div>
+      </div> --}}
 
       {{!-- ALL Insert Forms  --}}
       <div class="block">      
 
         <form id="insert_table_form" style="padding-bottom:10px;">
           <div class="field">
-            <label class="label">Select Table for Insertion</label>
+            <label class="label">Select Table</label>
             <p class="control">
               <span class="select">
                 <select id="insert_table_select">
@@ -87,24 +126,21 @@
           </div>
         </form>
 
-        {{!-- blank form --}}
-        <form name="blank" id="blank"></form>
-
         {{!-- car insert form --}}
-        <form name="car" id="car" style="display:none">
+        <form name="car" id="car" class="test_form" style="display:none">
           <div class="field">
             <label class="label">License</label>
-            <input type="text" class="input" placeholder="Enter License">
+            <input type="text" id="caps" class="input test_data" placeholder="Enter License">
           </div>
 
           <div class="field">
             <label class="label">Miles</label>
-            <input type="text" class="input" placeholder="Enter Miles">
+            <input type="text" class="input test_data" placeholder="Enter Miles">
           </div>
 
           <div class="field">
             <label class="label">carTypeID</label>
-            <input type="text" class="input" placeholder="Enter Car Type ID">
+            <input type="text" class="input test_data" placeholder="Enter Car Type ID">
           </div>
 
           <div class="field">
@@ -443,27 +479,6 @@
             <button class="button is-outlined is-success">Submit</button>
           </div>
         </form>                                                   
-
-        {{!-- form examples --}}
-        {{!-- <form> --}}
-          {{!-- <div class="field"> --}}
-            {{!-- <label class="label">Name</label> --}}
-            {{!-- <input type="text" class="input data" placeholder="Enter name"> --}}
-            {{!-- <button class="button is-success is-outlined" type="submit">Submit</button> --}}
-          {{!-- </div> --}}
-          
-          {{!-- danger form field example --}}
-          {{!-- <div class="field"> --}}
-            {{!-- <label class="label">with danger</label> --}}
-            {{!-- <input type="text" class="input is-danger" placeholder="Enter name"> --}}
-          {{!-- </div> --}}
-
-          {{!-- success form field example --}}
-          {{!-- <div class="field"> --}}
-            {{!-- <label class="label">with success</label> --}}
-            {{!-- <input type="text" class="input is-success" placeholder="Enter name"> --}}
-          {{!-- </div>                     --}}
-        {{!-- </form> --}}
         
       </div>
 
@@ -478,6 +493,7 @@
               <th>Phone</th>
             </tr>
           </thead>
+
           <tbody>
             <tr>
               <td>James Day</td>
@@ -500,6 +516,7 @@
               <td>444-444-4444</td>
             </tr>                    
           </tbody>
+
         </table>
       </div>      
 
