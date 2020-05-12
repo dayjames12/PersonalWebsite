@@ -38,17 +38,3 @@ function forceUpperCase(event){
     event.target.value = event.target.value.toUpperCase()
     event.target.setSelectionRange(start, end)
 }
-
-// // FORM INSERT 
-// document.querySelector(".test_form").addEventListener("submit", getData);
-// function getData(event){
-//     // const license = document.car.license.value
-//     // const miles = document.car.miles.value
-//     // const car_type_id = document.car.car_type_id.value
-
-//     // console.log(license)
-//     // console.log(miles)
-//     // console.log(car_type_id)
-
-//     event.preventDefault();
-// }
