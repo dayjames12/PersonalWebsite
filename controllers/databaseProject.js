@@ -19,7 +19,6 @@ router.post('/insertCar', (req,res) => {
     })
     res.redirect('/database')
 })
-
 // insert car features
 router.post('/insertCarFeature', (req,res) => {
     console.log(req.body)
@@ -37,7 +36,6 @@ router.post('/insertCarFeature', (req,res) => {
     })
     res.redirect('/database')
 })
-
 // insert car type
 router.post('/insertCarType', (req,res) => {
     console.log(req.body)
@@ -55,7 +53,6 @@ router.post('/insertCarType', (req,res) => {
     })
     res.redirect('/database')
 })
-
 // insert customer
 router.post('/insertCustomer', (req,res) => {
     console.log(req.body)
@@ -72,7 +69,6 @@ router.post('/insertCustomer', (req,res) => {
     })
     res.redirect('/database')
 })
-
 // insert customer preference
 router.post('/insertCustomerPreference', (req,res) => {
     console.log(req.body)
@@ -89,7 +85,6 @@ router.post('/insertCustomerPreference', (req,res) => {
     })
     res.redirect('/database')
 })
-
 // insert employee
 router.post('/insertEmployee', (req,res) => {
     console.log(req.body)
@@ -106,7 +101,6 @@ router.post('/insertEmployee', (req,res) => {
     })
     res.redirect('/database')
 })
-
 // insert loaner cars
 router.post('/insertLoanerCar', (req,res) => {
     console.log(req.body)
@@ -121,7 +115,6 @@ router.post('/insertLoanerCar', (req,res) => {
     })
     res.redirect('/database')
 })
-
 // insert mechanic
 router.post('/insertMechanic', (req,res) => {
     console.log(req.body)
@@ -136,7 +129,6 @@ router.post('/insertMechanic', (req,res) => {
     })
     res.redirect('/database')
 })
-
 // insert parts
 router.post('/insertParts', (req,res) => {
     console.log(req.body)
@@ -151,7 +143,6 @@ router.post('/insertParts', (req,res) => {
     })
     res.redirect('/database')
 })
-
 // insert parts employee
 router.post('/insertPartsEmployee', (req,res) => {
     console.log(req.body)
@@ -166,7 +157,6 @@ router.post('/insertPartsEmployee', (req,res) => {
     })
     res.redirect('/database')
 })
-
 // insert parts used
 router.post('/insertPartsUsed', (req,res) => {
     console.log(req.body)
@@ -184,7 +174,6 @@ router.post('/insertPartsUsed', (req,res) => {
     })
     res.redirect('/database')
 })
-
 // insert rentedCars
 router.post('/insertRentedCars', (req,res) => {
     console.log(req.body)
@@ -200,16 +189,18 @@ router.post('/insertRentedCars', (req,res) => {
     })
     res.redirect('/database')
 })
-
 // insert repair
 router.post('/insertRepair', (req,res) => {
     console.log(req.body)
 
     let sql = 'INSERT INTO repair SET ?'
     let data = {
-        name: req.body.name,
-        address: req.body.address,
-        phone: req.body.phone
+        carID: req.body.carID,
+        mechanicID: req.body.mechanicID,
+        serviceManagerID: req.body.serviceManagerID,
+        customerID: req.body.customerID,
+        description: req.body.description,
+        cost: req.body.cost
     } 
     let query = db.query(sql, data, (err,res) => {
         if (err) throw err
@@ -217,16 +208,18 @@ router.post('/insertRepair', (req,res) => {
     })
     res.redirect('/database')
 })
-
 // insert sales
 router.post('/insertSales', (req,res) => {
     console.log(req.body)
 
     let sql = 'INSERT INTO sales SET ?'
     let data = {
-        name: req.body.name,
-        address: req.body.address,
-        phone: req.body.phone
+        salesEmployeeID: req.body.salesEmployeeID,
+        partsEmployeeID: req.body.partsEmployeeID,
+        customerID: req.body.customerID,
+        carID: req.body.carID,
+        tradeInID: req.body.tradeInID,
+        partID: req.body.partID
     } 
     let query = db.query(sql, data, (err,res) => {
         if (err) throw err
@@ -234,16 +227,13 @@ router.post('/insertSales', (req,res) => {
     })
     res.redirect('/database')
 })
-
 // insert sales employee
 router.post('/insertSalesEmployee', (req,res) => {
     console.log(req.body)
 
     let sql = 'INSERT INTO `sales employee` SET ?'
     let data = {
-        name: req.body.name,
-        address: req.body.address,
-        phone: req.body.phone
+        employeeID: req.body.employeeID
     } 
     let query = db.query(sql, data, (err,res) => {
         if (err) throw err
@@ -251,16 +241,13 @@ router.post('/insertSalesEmployee', (req,res) => {
     })
     res.redirect('/database')
 })
-
 // insert service manager
 router.post('/insertServiceManager', (req,res) => {
     console.log(req.body)
 
     let sql = 'INSERT INTO `service managere` SET ?'
     let data = {
-        name: req.body.name,
-        address: req.body.address,
-        phone: req.body.phone
+        employeeID: req.body.employeeID
     } 
     let query = db.query(sql, data, (err,res) => {
         if (err) throw err
@@ -268,16 +255,15 @@ router.post('/insertServiceManager', (req,res) => {
     })
     res.redirect('/database')
 })
-
 // insert trade in
 router.post('/insertTradeIn', (req,res) => {
     console.log(req.body)
 
     let sql = 'INSERT INTO `trade in` SET ?'
     let data = {
-        name: req.body.name,
-        address: req.body.address,
-        phone: req.body.phone
+        customerID: req.body.customerID,
+        carID: req.body.carID,
+        value: req.body.value
     } 
     let query = db.query(sql, data, (err,res) => {
         if (err) throw err
