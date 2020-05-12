@@ -1,8 +1,8 @@
 const express = require('express'),
-    router = express.Router()
+    router = express.Router(),
     db = require('./db')
 
-// -------------------------------------------------INSERT-------------------------------------------------
+// ----------------------------INSERT START----------------------------
 // insert car
 router.post('/insertCar', (req,res) => {
     console.log(req.body)
@@ -271,18 +271,18 @@ router.post('/insertTradeIn', (req,res) => {
     })
     res.redirect('/database')
 })
+// ----------------------------INSERT END----------------------------
 
-// -------------------------------------------------INSERT-------------------------------------------------
-
-
-router.get('/carList', (req,res,next) => {
+// ----------------------------SELECT ALL START----------------------------
+// select cars list
+router.get('/database/carTable', (req,res,next) => {
     let sql = 'SELECT * FROM car'
     db.query(sql, (err, data, fields) => {
         if (err) throw err
-        res.render('carList', { title: 'Car List', carData: data})
+        res.render('651-database-project/carTable', {title: 'Car List', carData: data})
     })
 })
-
+// ----------------------------SELECT ALL END----------------------------
 
 
 module.exports = router

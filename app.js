@@ -27,17 +27,16 @@ app.use(require('./routes/app'))
 app.use(require('./controllers/databaseProject'))
 
 // 404 error handling
-app.use(function(req,res,next){
-    if (req.accepts('html')){
-        res.render('404', {title : 'Not Found', url: req.url})
-        return
-    }
-})
+// app.use(function(req,res,next){
+//     if (req.accepts('html')){
+//         res.render('404', {title : 'Not Found', url: req.url})
+//         return
+//     }
+// })
 
 // port
 const server = require('http').createServer(app),
     port = 3000
 server.listen(port, () => console.log(`Listening on ${port}...`))
 
-module.exports = db
 module.exports = bodyParser

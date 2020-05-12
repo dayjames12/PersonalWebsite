@@ -26,76 +26,14 @@
     </div>
 
     <div id="search" class="tab_content">
-      <h2 class="is-size-2"></h2>
-      <p>Search Content</p>
+      <h2 class="is-size-2">Search</h2>
+      <button class="button is-success" onclick="/selectCars" type="submit">test select all</button>
     </div>
 
     <div id="insert" class="tab_content">
-      <h2 class="is-size-2"></h2>
-      <p>Insert Content</p>
-    </div>
-
-    <div id="update" class="tab_content">
-      <h2 class="is-size-2"></h2>
-      <p>Update Content</p>
-    </div>
-
-    <div id="delete" class="tab_content">
-      <h2 class="is-size-2"></h2>
-      <p>Delete Content</p>
-    </div>
-
-    <div id="account" class="tab_content">
-      <h2 class="is-size-2"></h2>
-      <p>Account Content</p>
-    </div>
-
-  </div>
-
-  {{!-- main section--}}
-  <section class="section">
-    <div class="column is-three-fifths is-offset-one-fifth">
-      {{!-- <div class="block">
-        <p class="content is-medium has-background-white">
-          Create Account <br>
-          Login <br>
-          Search <br>
-          Insert <br>
-          Update <br>
-          Delete <br>
-          Exit (logout?)
-        </p>
-      </div> --}}
-
-      {{!-- level --}}
-      {{!-- <div class="block">
-        <nav class="level"> --}}
-          {{!-- left side --}}
-          {{!-- <div class="level-left">
-            <p class="level-item"><a href="">Create Account</a></p>
-            <p class="level-item"><a href="">Login</a></p>
-            <p class="level-item"><a href="">Search</a></p>
-            <p class="level-item"><a href=""><strong>Insert</strong></a></p>
-            <p class="level-item"><a href="">Update</a></p>
-            <p class="level-item"><a href="">Delete</a></p>
-            <p class="level-item"><a href="">Exit</a></p>
-          </div> --}}
-          {{!-- right side --}}
-          {{!-- <div class="level-right">
-            <div class="level-item">
-              <div class="field">
-                <p class="control">
-                  <input type="text" class="input" placeholder="Search database...">
-                </p>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div> --}}
-
-      {{!-- ALL Insert Forms  --}}
-      <div class="block">      
-
+      <h2 class="is-size-2">Insert</h2>
+            {{!-- ALL Insert Forms  --}}
+      <div class="block column is-three-fifths is-offset-one-fifth">      
         <form id="insert_table_form" style="padding-bottom:10px;">
           <div class="field">
             <label class="label">Select Table</label>
@@ -125,6 +63,10 @@
             </p>
           </div>
         </form>
+
+        <form name="blank" id="blank" style="display:none">
+
+        </form>   
 
         {{!-- car insert form --}}
         <form action="/insertCar" method="POST" name="car" id="car" style="display:none">
@@ -482,7 +424,25 @@
         </form>                                                   
         
       </div>
+    </div>
 
+    <div id="update" class="tab_content">
+      <h2 class="is-size-2">Update</h2>
+    </div>
+
+    <div id="delete" class="tab_content">
+      <h2 class="is-size-2">Delete</h2>
+    </div>
+
+    <div id="account" class="tab_content">
+      <h2 class="is-size-2">Account</h2>
+    </div>
+
+  </div>
+
+  {{!-- main section--}}
+  <section class="section">
+    <div class="column is-three-fifths is-offset-one-fifth">
 
       {{!-- tables --}}
       <div class="block">
@@ -495,9 +455,7 @@
               <th>carTypeID</th>
             </tr>
           </thead>
-
           <tbody>
-
 
             <!-- <tr>
               <th>1</th>

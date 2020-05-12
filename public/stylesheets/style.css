@@ -2,6 +2,7 @@
     display: none;
 }
 
+/* change this to start the databse project first selected tab */
 #search{
     display: block;
 }
