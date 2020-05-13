@@ -1,5 +1,5 @@
 const express = require('express'),
-    router = express.Router(),
+    router = express.Router({mergeParams:true}),
     db = require('./db')
 
 // ----------------------------INSERT START----------------------------
@@ -274,15 +274,22 @@ router.post('/insertTradeIn', (req,res) => {
 // ----------------------------INSERT END----------------------------
 
 // ----------------------------SELECT ALL START----------------------------
-// select cars list
-router.get('/database/carTable', (req,res,next) => {
-    let sql = 'SELECT * FROM car'
+router.get('/database/retrieve:table', (req,res) => {
+    let sql = `SELECT * FROM ${req.params.table}`
+    console.log(sql)
     db.query(sql, (err, data, fields) => {
         if (err) throw err
-        res.render('651-database-project/carTable', {title: 'Car List', carData: data})
+        res.send(data)
+    })
+})
+router.get('/database/show:table', (req,res) => {
+    let sql = `SELECT * FROM ${req.params.table}`
+    console.log(sql)
+    db.query(sql, (err, data, fields) => {
+        if (err) throw err
+        res.render('651-database-project/templates/tableTemplate', {data: data, keyData: data[0]})
     })
 })
 // ----------------------------SELECT ALL END----------------------------
-
 
 module.exports = router

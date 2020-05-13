@@ -27,7 +27,8 @@
 
     <div id="search" class="tab_content">
       <h2 class="is-size-2">Search</h2>
-      <button class="button is-success" onclick="/selectCars" type="submit">test select all</button>
+      <button class="button is-success" id="tableButtonTest" type="submit">test select all</button>
+      <button class="button is-danger" id="btn" type="submit">test select all</button>
     </div>
 
     <div id="insert" class="tab_content">
@@ -444,50 +445,10 @@
   <section class="section">
     <div class="column is-three-fifths is-offset-one-fifth">
 
-      {{!-- tables --}}
-      <div class="block">
-        <table class="table is-striped">
-          <thead>
-            <tr>
-              <th>carID</th>
-              <th>license</th>
-              <th>miles</th>
-              <th>carTypeID</th>
-            </tr>
-          </thead>
-          <tbody>
-
-            <!-- <tr>
-              <th>1</th>
-              <th>1234567</th>
-              <th>10000</th>
-              <th>2</th>
-            </tr>
-            <tr>
-              <th>2</th>
-              <th>1234567</th>
-              <th>20000</th>
-              <th>2</th>
-            </tr>
-            <tr class="is-selected">
-              <th>3</th>
-              <th>1234567</th>
-              <th>30000</th>
-              <th>1</th>
-            </tr>      
-            <tr>
-              <th>4</th>
-              <th>1234567</th>
-              <th>40000</th>
-              <th>2</th>
-            </tr>                     -->
-          </tbody>
-
-        </table>
-      </div>      
+      <div class="block" id="table_container"></div>  
 
       {{!-- pagination --}}
-      <div class="block">
+      {{!-- <div class="block">
         <nav class="pagination">
           <a href="" class="pagination-previous" disabled>Previous</a>
           <a href="" class="pagination-next">Next</a>
@@ -503,8 +464,7 @@
               </li>            
             </ul>
         </nav>
-      </div>
-
+      </div> --}}
 
     </div>
 
@@ -514,3 +474,27 @@
 
 <script type="text/javascript" src="/javascript/database.js"></script>
 
+
+<div class="block">
+  <table class="table is-striped">
+
+    <thead>
+      <tr>
+        <th>carID</th>
+        <th>license</th>
+        <th>miles</th>
+        <th>carTypeID</th>
+      </tr>
+    </thead>
+
+    <tbody>
+     <tr>
+        <th>1</th>
+        <th>1234567</th>
+        <th>10000</th>
+        <th>2</th>
+      </tr>  
+    </tbody>
+
+  </table>
+</div>    

@@ -1,0 +1,26 @@
+<div>
+    <table class="table is-striped">
+        <thead>
+            <tr>
+                <tr>
+                    {{#each data}}
+                        <th> {{@key}}</th>
+                    {{/each}}
+                </tr>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+                <tr>
+                    <th>{{this.carID}}</th>
+                    <th>{{this.license}}</th>
+                    <th>{{this.miles}}</th>
+                    <th>{{this.carTypeID}}</th>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+
+
