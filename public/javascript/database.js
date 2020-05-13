@@ -40,7 +40,7 @@ function forceUpperCase(event){
 // ----------------------------AJAX TABLE DISPLAYER----------------------------
 // var btn = document.getElementById("btn");
 $('#insert_table_select').on("change", function() {
-    var table = $(this).val().replace('_', ' ') // get table selected and remove '_'
+    var table = $(this).val()
 
     var ourRequest = new XMLHttpRequest();
     ourRequest.open('GET', `/database/retrieve${table}`)

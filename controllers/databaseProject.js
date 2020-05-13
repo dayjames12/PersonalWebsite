@@ -276,7 +276,6 @@ router.post('/insertTradeIn', (req,res) => {
 // ----------------------------SELECT ALL START----------------------------
 router.get('/database/retrieve:table', (req,res) => {
     let sql = `SELECT * FROM ${req.params.table}`
-    console.log('req.params:', req.params.table);
     
     console.log(sql)
     db.query(sql, (err, data, fields) => {
