@@ -3,6 +3,10 @@
 }
 
 /* change this to start the databse project first selected tab */
-#search{
+#insert{
     display: block;
+}
+
+.tab_content{
+    padding-left: 20px
 }

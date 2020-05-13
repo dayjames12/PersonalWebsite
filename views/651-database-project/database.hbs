@@ -25,9 +25,8 @@
       </ul>
     </div>
 
-    <div id="search" class="tab_content">
+    <div id="search" class="tab_content" >
       <h2 class="is-size-2">Search</h2>
-      <button class="button is-success" id="tableButtonTest" type="submit">test select all</button>
       <button class="button is-danger" id="btn" type="submit">test select all</button>
     </div>
 
@@ -212,7 +211,7 @@
           </div>
         </form>   
 
-        {{!-- rented_cars insert form --}}
+        {{!-- loaner_cars insert form --}}
         <form action="/insertLoanerCar" method="POST" name="loaner_cars" id="loaner_cars" style="display:none">
           <div class="field">
             <label class="label">Car ID</label>
@@ -475,26 +474,3 @@
 <script type="text/javascript" src="/javascript/database.js"></script>
 
 
-<div class="block">
-  <table class="table is-striped">
-
-    <thead>
-      <tr>
-        <th>carID</th>
-        <th>license</th>
-        <th>miles</th>
-        <th>carTypeID</th>
-      </tr>
-    </thead>
-
-    <tbody>
-     <tr>
-        <th>1</th>
-        <th>1234567</th>
-        <th>10000</th>
-        <th>2</th>
-      </tr>  
-    </tbody>
-
-  </table>
-</div>    

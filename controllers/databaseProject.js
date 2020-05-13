@@ -276,18 +276,12 @@ router.post('/insertTradeIn', (req,res) => {
 // ----------------------------SELECT ALL START----------------------------
 router.get('/database/retrieve:table', (req,res) => {
     let sql = `SELECT * FROM ${req.params.table}`
+    console.log('req.params:', req.params.table);
+    
     console.log(sql)
     db.query(sql, (err, data, fields) => {
         if (err) throw err
         res.send(data)
-    })
-})
-router.get('/database/show:table', (req,res) => {
-    let sql = `SELECT * FROM ${req.params.table}`
-    console.log(sql)
-    db.query(sql, (err, data, fields) => {
-        if (err) throw err
-        res.render('651-database-project/templates/tableTemplate', {data: data, keyData: data[0]})
     })
 })
 // ----------------------------SELECT ALL END----------------------------
