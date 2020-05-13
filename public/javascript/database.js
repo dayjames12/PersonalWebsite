@@ -19,7 +19,7 @@ function openTab(event, tabID) {
     // remove is-active from class tab_links
     tab_links = document.getElementsByClassName('tab_links')
     for (i = 0; i < tab_links.length; i++) {
-        tab_links[i].className = tab_links[i].className.replace(' is-active',' ')
+        tab_links[i].className = tab_links[i].className.replace('is-active',' ')
         
     }
 
