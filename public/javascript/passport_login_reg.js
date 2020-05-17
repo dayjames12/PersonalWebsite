@@ -5,7 +5,7 @@ function regVal(){
     var togo;
     var user = {
         'name' : document.register.username.value,
-        'email' : document.register.email.value,
+        // 'email' : document.register.email.value,
         'pass': document.register.password.value,
         'confirmPass' : document.register.confirmPassword.value
     }

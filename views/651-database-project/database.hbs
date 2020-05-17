@@ -34,8 +34,6 @@
     </div>
 
     <div id="insert" class="tab_content">
-  
-            {{!-- ALL Insert Forms  --}}
       <div class="block column is-three-fifths is-offset-one-fifth">  
         <h2 class="is-size-2">Insert</h2>    
         <form id="insert_table_form" style="padding-bottom:10px;">
@@ -68,9 +66,7 @@
           </div>
         </form>
 
-        <form name="blank" id="blank" style="display:none">
-
-        </form>   
+        <form name="blank" id="blank" style="display:none"></form>   
 
         {{!-- car insert form --}}
         <form action="/insertCar" method="POST" name="car" id="car" style="display:none">
@@ -446,36 +442,13 @@
       </div>
     </div>
 
+    <div class="block column is-three-fifths is-offset-one-fifth"> 
+        <div id="table_container"></div>
+      </div>
+    
   </div>
 
-  {{!-- main section--}}
-  <section class="section">
-    <div class="column is-three-fifths is-offset-one-fifth">
 
-      <div class="block" id="table_container"></div>  
-
-      {{!-- pagination --}}
-      {{!-- <div class="block">
-        <nav class="pagination">
-          <a href="" class="pagination-previous" disabled>Previous</a>
-          <a href="" class="pagination-next">Next</a>
-            <ul class="pagination-list">
-              <li>
-                <a href="" class="pagination-link is-current">1</a>
-              </li>
-              <li>
-                <a href="" class="pagination-link">2</a>              
-              </li>
-              <li>
-                <a href="" class="pagination-link">3</a>              
-              </li>            
-            </ul>
-        </nav>
-      </div> --}}
-
-    </div>
-
-  </section>
 
 </body>
 
