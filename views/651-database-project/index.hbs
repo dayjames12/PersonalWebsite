@@ -1,0 +1,13 @@
+<h1>{{title}}</h1>
+<p>Welcome {{user.username}}<p>
+<ul>
+    <li>   
+        <a href="/database/login">Login</a>
+    </li>
+    <li>
+        <a href="/database/register">Register</a>
+    </li>
+</ul>
+<form action="/database/logout?_method=DELETE" method="GET">
+    <button class="submitButton" type="submit"> Logout </button>
+</form>

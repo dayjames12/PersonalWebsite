@@ -16,10 +16,10 @@ router.get('/projects', (req,res) => {
     res.render('projects', {title: 'Projects'})
 })
 
-// get project page
-router.get('/database', (req,res) => {
-    res.render('651-database-project/database', {title: 'CSC651 Final Course Project'})
-})
+// // get project page
+// router.get('/database', (req,res) => {
+//     res.render('651-database-project/database', {title: 'CSC651 Final Course Project'})
+// })
 
 
 module.exports = router

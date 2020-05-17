@@ -20,20 +20,24 @@
         <li class="tab_links " onclick="openTab(event,'search')"><a>Search</a></li>
         <li class="tab_links is-active" onclick="openTab(event,'insert')"><a>Insert</a></li>
         <li class="tab_links " onclick="openTab(event,'update')"><a>Update</a></li>
-        <li class="tab_links " onclick="openTab(event,'delete')"><a>Delete</a></li>
+        {{!-- <li class="tab_links " onclick="openTab(event,'delete')"><a>Delete</a></li> --}}
         <li class="tab_links " onclick="openTab(event,'account')"><a>Account</a></li>
+        <li class="tab_links "><a href="/database/logout">Logout</a></li>
       </ul>
     </div>
 
     <div id="search" class="tab_content" >
-      <h2 class="is-size-2">Search</h2>
-      <button class="button is-danger" id="btn" type="submit">test select all</button>
+      <div class="block column is-three-fifths is-offset-one-fifth"> 
+        <h2 class="is-size-2">Search</h2> 
+        <button class="button is-danger" id="btn" type="submit">test select all</button>
+      </div>
     </div>
 
     <div id="insert" class="tab_content">
-      <h2 class="is-size-2">Insert</h2>
+  
             {{!-- ALL Insert Forms  --}}
-      <div class="block column is-three-fifths is-offset-one-fifth">      
+      <div class="block column is-three-fifths is-offset-one-fifth">  
+        <h2 class="is-size-2">Insert</h2>    
         <form id="insert_table_form" style="padding-bottom:10px;">
           <div class="field">
             <label class="label">Select Table</label>
@@ -87,7 +91,7 @@
           </div>
 
           <div class="field">
-            <button class="button is-outlined is-success" type="submit" value="submit">Submit</button>
+            <button class="button is-outlined is-success is-light" type="submit" value="submit">Submit</button>
           </div>
         </form>   
 
@@ -114,7 +118,7 @@
           </div>
 
           <div class="field">
-            <button class="button is-outlined is-success">Submit</button>
+            <button class="button is-outlined is-success is-light is-light">Submit</button>
           </div>          
         </form>
 
@@ -141,7 +145,7 @@
           </div>          
 
           <div class="field">
-            <button class="button is-outlined is-success">Submit</button>
+            <button class="button is-outlined is-success is-light">Submit</button>
           </div>          
         </form>       
 
@@ -163,7 +167,7 @@
           </div>
 
           <div class="field">
-            <button class="button is-outlined is-success">Submit</button>
+            <button class="button is-outlined is-success is-light">Submit</button>
           </div>
         </form>   
 
@@ -185,7 +189,7 @@
           </div>
 
           <div class="field">
-            <button class="button is-outlined is-success">Submit</button>
+            <button class="button is-outlined is-success is-light">Submit</button>
           </div>
         </form>           
 
@@ -207,7 +211,7 @@
           </div>
 
           <div class="field">
-            <button class="button is-outlined is-success">Submit</button>
+            <button class="button is-outlined is-success is-light">Submit</button>
           </div>
         </form>   
 
@@ -219,7 +223,7 @@
           </div>
 
           <div class="field">
-            <button class="button is-outlined is-success">Submit</button>
+            <button class="button is-outlined is-success is-light">Submit</button>
           </div>
         </form>   
 
@@ -231,7 +235,7 @@
           </div>
 
           <div class="field">
-            <button class="button is-outlined is-success">Submit</button>
+            <button class="button is-outlined is-success is-light">Submit</button>
           </div>
         </form> 
 
@@ -243,7 +247,7 @@
           </div>
 
           <div class="field">
-            <button class="button is-outlined is-success">Submit</button>
+            <button class="button is-outlined is-success is-light">Submit</button>
           </div>
         </form> 
 
@@ -255,7 +259,7 @@
           </div>
 
           <div class="field">
-            <button class="button is-outlined is-success">Submit</button>
+            <button class="button is-outlined is-success is-light">Submit</button>
           </div>
         </form> 
 
@@ -282,7 +286,7 @@
           </div>          
 
           <div class="field">
-            <button class="button is-outlined is-success">Submit</button>
+            <button class="button is-outlined is-success is-light">Submit</button>
           </div>
         </form> 
 
@@ -299,7 +303,7 @@
           </div>
 
           <div class="field">
-            <button class="button is-outlined is-success">Submit</button>
+            <button class="button is-outlined is-success is-light">Submit</button>
           </div>
         </form>         
 
@@ -336,7 +340,7 @@
           </div>
 
           <div class="field">
-            <button class="button is-outlined is-success">Submit</button>
+            <button class="button is-outlined is-success is-light">Submit</button>
           </div>
         </form>   
 
@@ -373,7 +377,7 @@
           </div>
 
           <div class="field">
-            <button class="button is-outlined is-success">Submit</button>
+            <button class="button is-outlined is-success is-light">Submit</button>
           </div>
         </form>   
 
@@ -385,7 +389,7 @@
           </div>
 
           <div class="field">
-            <button class="button is-outlined is-success">Submit</button>
+            <button class="button is-outlined is-success is-light">Submit</button>
           </div>
         </form>   
 
@@ -397,7 +401,7 @@
           </div>
 
           <div class="field">
-            <button class="button is-outlined is-success">Submit</button>
+            <button class="button is-outlined is-success is-light">Submit</button>
           </div>
         </form>   
 
@@ -419,7 +423,7 @@
           </div>
 
           <div class="field">
-            <button class="button is-outlined is-success">Submit</button>
+            <button class="button is-outlined is-success is-light">Submit</button>
           </div>
         </form>                                                   
         
@@ -427,15 +431,19 @@
     </div>
 
     <div id="update" class="tab_content">
-      <h2 class="is-size-2">Update</h2>
+      <div class="block column is-three-fifths is-offset-one-fifth">   
+        <h2 class="is-size-2">Update</h2>
+      </div>
     </div>
-
+{{!-- 
     <div id="delete" class="tab_content">
       <h2 class="is-size-2">Delete</h2>
-    </div>
+    </div> --}}
 
     <div id="account" class="tab_content">
-      <h2 class="is-size-2">Account</h2>
+      <div class="block column is-three-fifths is-offset-one-fifth"> 
+        <h2 class="is-size-2">Account</h2>
+      </div>
     </div>
 
   </div>

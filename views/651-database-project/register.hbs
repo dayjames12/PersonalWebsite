@@ -1,0 +1,46 @@
+<body>
+    <section class="hero is-dark">
+        <div class="hero-body has-text-centered">
+        <h1 class="title">
+            CSC 651 Database Final Course Project
+        </h1>
+        <h1 class="subtitle">
+            <strong>Student Name: James Day</strong><br>
+            <strong>Student Id: 918587415</strong><br>
+            <strong>Student Email: jday6@mail.sfsu.edu</strong>
+        </h1>
+        </div>
+    </section>
+
+    <div class="column is-three-fifths is-offset-one-fifth">
+        <h1 class="title">Create Account</h1>
+
+        <div class="block"> 
+            <a href="/database/login" class="button is-small is-light is-outlined is-danger">
+                <strong>
+                    Log In
+                </strong> 
+            </a>
+        </div>
+
+        <form action="/database/register" method="POST" name="register" onsubmit= "return regVal()">
+            <div class="field">
+                <label for="username" class="label">Username:</label>
+                <input type="text" id="username" name="username" class="input" placeholder="Username" required minlength=3><br>
+            </div>
+
+            <div class="field">
+                <label for="password" class="label">Password:</label>
+                <input type="password" id="password" name="password" class="input" placeholder="Password" required minlength=8><br>
+            </div>
+
+            <div class="field">
+                <label for="confirmPassword" class="label">Confirm Password:</label>
+                <input type="password" id="confirmPassword" style="padding-bottom: 5x;" name="confirmPassword" class="input" placeholder="Confirm Password" required minlength=8><br>
+            </div>
+            <div class="field">
+                <button class="submitButton button is-success is-outlined is-light" type="submit" name="submit" value="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>

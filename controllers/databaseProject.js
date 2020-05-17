@@ -1,6 +1,6 @@
 const express = require('express'),
     router = express.Router({mergeParams:true}),
-    db = require('./db')
+    connection = require('./connection')
 
 // ----------------------------INSERT START----------------------------
 // insert car

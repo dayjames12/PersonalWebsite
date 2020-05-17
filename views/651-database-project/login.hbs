@@ -1,0 +1,48 @@
+<body>
+    <section class="hero is-dark">
+        <div class="hero-body has-text-centered">
+        <h1 class="title">
+            CSC 651 Database Final Course Project
+        </h1>
+        <h1 class="subtitle">
+            <strong>Student Name: James Day</strong><br>
+            <strong>Student Id: 918587415</strong><br>
+            <strong>Student Email: jday6@mail.sfsu.edu</strong>
+        </h1>
+        </div>
+    </section>
+
+    <div class="column is-three-fifths is-offset-one-fifth">
+        <h1 id="loginHeader" class="title">Login</h1>
+
+        <div class="block"> 
+            <a href="/database/register" class="button is-small is-light is-outlined is-danger">
+                <strong>
+                    Create Account
+                </strong> 
+            </a>
+        </div>
+
+
+        <form action="/database/login" method="POST" class="form" id="loginForm" name="login" enctype='application/json'>
+            <div class="container">
+
+                <div class="field">
+                    <label for="username" class="label" >Username:</label>
+                    <input type="text" id="username" class="input" name="username" placeholder="Username" required><br>                   
+                </div>
+
+                <div class="field">
+                    <label for="password" class="label">Password:</label>
+                    <input type="password" id="password" class="input" name="password" placeholder="Password" required><br>
+                </div>
+
+                <div class="field">
+                    <button class="submitButton button is-info is-outlined is-light" type="submit" name="submit" value="submit" >Submit</button>
+                </div>
+
+            </div>
+        </form>    
+    </div>
+
+</body>
