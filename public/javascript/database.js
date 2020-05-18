@@ -51,7 +51,7 @@ $(document).on('click', '.delete', function(event) {
         url: `/database/delete/${table.value}/${name}/${number}`,
         success: function(status) {
             if (status.worked == 'false') {
-                alert('Delete Failed, SQL Error Code: ' + status.message )
+                alert('Delete Failed, MYSQL Error: ' + status.message )
 
             } else {
                 element.closest('tr').hide(200)
@@ -60,10 +60,6 @@ $(document).on('click', '.delete', function(event) {
     })
     return false;
 })
-
-
-
-
 
 // ----------------------------AJAX TABLE DISPLAYER----------------------------
 // var btn = document.getElementById("btn");
