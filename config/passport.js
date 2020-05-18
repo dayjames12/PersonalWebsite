@@ -35,7 +35,7 @@ module.exports = function(passport) {
                     return done(err)
                 }
                 if (rows.length){
-                    return done(null, false, req.flash('registerMessage', "Username taken"))
+                    return done(null, false, req.flash('registerMessage', `Username \"${username}\" taken, please try again`))
                 } else {
                     var newUser = {
                         username: username,
@@ -75,10 +75,10 @@ module.exports = function(passport) {
                     return done(err)
                 }
                 if (!rows.length){
-                    return done(null, false, req.flash('loginMessage', 'No user found with that username'))
+                    return done(null, false, req.flash('loginMessage', `Sorry, username \"${username}\" not found `))
                 }
                 if (!bcrypt.compareSync(password, rows[0].password)){
-                    return done(null, false, req.flash('loginMessage', 'Wrong password'))
+                    return done(null, false, req.flash('loginMessage', 'Incorrect password, please try again'))
                 }
                 return done(null, rows[0])
             })

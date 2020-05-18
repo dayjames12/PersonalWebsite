@@ -23,6 +23,14 @@
             </a>
         </div>
 
+        <div class="block">
+            {{#if message }}
+                <h1 class="title is-4 has-text-warning">
+                    {{message}}
+                </h1>
+            {{/if}}
+        </div>        
+
 
         <form action="/database/login" method="POST" class="form" id="loginForm" name="login" enctype='application/json'>
             <div class="container">
