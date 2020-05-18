@@ -37,17 +37,45 @@ function forceUpperCase(event){
     event.target.setSelectionRange(start, end)
 }
 
+// ----------------------------DELETE ROW----------------------------
+$(document).on('click', '.delete', function(event) {
+    event.preventDefault()
+
+    var element = $(this)
+    var table = document.getElementById('insert_table_select')
+    var name = element.attr('data-name')
+    var number = element.attr('data-id')
+
+    $.ajax({
+        type:'delete',
+        url: `/database/delete/${table.value}/${name}/${number}`,
+        success: function(status) {
+            if (status.worked == 'false') {
+                alert('Delete Failed, SQL Error Code: ' + status.message )
+
+            } else {
+                element.closest('tr').hide(200)
+            }
+        }
+    })
+    return false;
+})
+
+
+
+
+
 // ----------------------------AJAX TABLE DISPLAYER----------------------------
 // var btn = document.getElementById("btn");
-$('#insert_table_select').on("change", function() {
+$('#insert_table_select').on('change', function() {
     var table = $(this).val()
 
     var ourRequest = new XMLHttpRequest();
-    ourRequest.open('GET', `/database/retrieve${table}`)
+    ourRequest.open('GET', `/database/retrieve/${table}`)
     ourRequest.onload = function() {
     if (ourRequest.status >= 200 && ourRequest.status < 400) {
         var ourData = JSON.parse(ourRequest.responseText);
-        renderHTML(ourData);
+        renderTable(ourData);
     } else {
         console.log("We connected to the server, but it returned an error.");
     }
@@ -60,14 +88,14 @@ $('#insert_table_select').on("change", function() {
 
     ourRequest.send();
 
-    function renderHTML(data) {
+    function renderTable(data) {
         // thead
         var tableKeys = Object.keys(data[0])
         var columnsString = ''
         for (i = 0; i < tableKeys.length; i++) {
             columnsString += "<th>" + tableKeys[i] + "</th>"
         }
-        columnsString += '<th>Edit</th> <th>Delete</th>'      
+        columnsString += '<th>Edit</th> <th>Delete</th>'              
 
         // td rows
         var tableData = ''
@@ -77,7 +105,17 @@ $('#insert_table_select').on("change", function() {
                 
                 tableData += '<td>' + data[i][tableKeys[j]] + '</td>'
             }
-            tableData += '<td><a href="">Edit</a></td> <td><a href="">Delete</a></td>'
+            tableData += `\
+                <td>\
+                    <a href="">Edit</a>\
+                </td>\
+                <td>\
+                    <button class=\'button delete is-danger is-light is-outlined\' \
+                        data-name=\'${tableKeys[0]}\' data-id=\'${data[i][tableKeys[0]]}\'
+                    >\
+                    </button>\
+                </td>\
+                `
 
             tableData += '</tr>'
         }

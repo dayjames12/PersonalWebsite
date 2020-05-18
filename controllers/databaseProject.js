@@ -7,6 +7,35 @@ const express = require('express'),
 connection.query('USE ' + dbconfig.database);
 
 
+// ----------------------------SELECT ALL START----------------------------
+router.get('/database/retrieve/:table', (req,res) => {
+    let sql = `SELECT * FROM ${req.params.table}`
+    
+    console.log(sql)
+    connection.query(sql, (err, data, fields) => {
+        if (err) throw err
+        res.send(data)
+    })
+})
+// ----------------------------DELETE----------------------------
+router.delete('/database/delete/:table/:name/:number', (req,res) =>{    
+    let sql = `DELETE FROM ${req.params.table} WHERE ${req.params.name} = \'${req.params.number}\'`
+
+    console.log(sql)
+    connection.query(sql, (err, data, fields) =>{
+        if (err) {
+            // res.send(status, body): Use res.status(status).send(body)
+            // res.send(false, errorr)
+            var status = {'worked':'false','message':`${err.code}`}
+            res.send(status)
+            return console.log(err);
+        }
+        console.log(data);
+        res.send(data)
+    })
+})
+
+
 // ----------------------------INSERT START----------------------------
 // insert car
 router.post('/insertCar', (req,res) => {
@@ -28,7 +57,7 @@ router.post('/insertCar', (req,res) => {
 router.post('/insertCarFeature', (req,res) => {
     console.log(req.body)
 
-    let sql = 'INSERT INTO `car features` SET ?'
+    let sql = 'INSERT INTO `car_features` SET ?'
     let data = {
         carTypeID: req.body.carTypeID,
         cost: req.body.cost,
@@ -45,7 +74,7 @@ router.post('/insertCarFeature', (req,res) => {
 router.post('/insertCarType', (req,res) => {
     console.log(req.body)
 
-    let sql = 'INSERT INTO `car type` SET ?'
+    let sql = 'INSERT INTO `car_type` SET ?'
     let data = {
         year: req.body.year,
         make: req.body.make,
@@ -78,7 +107,7 @@ router.post('/insertCustomer', (req,res) => {
 router.post('/insertCustomerPreference', (req,res) => {
     console.log(req.body)
 
-    let sql = 'INSERT INTO `customer preference` SET ?'
+    let sql = 'INSERT INTO `customer_preference` SET ?'
     let data = {
         customerID: req.body.customerID,
         carFeatureID: req.body.carFeatureID,
@@ -110,7 +139,7 @@ router.post('/insertEmployee', (req,res) => {
 router.post('/insertLoanerCar', (req,res) => {
     console.log(req.body)
 
-    let sql = 'INSERT INTO `loaner cars` SET ?'
+    let sql = 'INSERT INTO `loaner_cars` SET ?'
     let data = {
         carID: req.body.carID
     } 
@@ -152,7 +181,7 @@ router.post('/insertParts', (req,res) => {
 router.post('/insertPartsEmployee', (req,res) => {
     console.log(req.body)
 
-    let sql = 'INSERT INTO `parts employee` SET ?'
+    let sql = 'INSERT INTO `parts_employee` SET ?'
     let data = {
         employeeID: req.body.employeeID
     } 
@@ -166,7 +195,7 @@ router.post('/insertPartsEmployee', (req,res) => {
 router.post('/insertPartsUsed', (req,res) => {
     console.log(req.body)
 
-    let sql = 'INSERT INTO `parts used` SET ?'
+    let sql = 'INSERT INTO `parts_used` SET ?'
     let data = {
         repairID: req.body.repairID,
         quantity: req.body.quantity,
@@ -183,7 +212,7 @@ router.post('/insertPartsUsed', (req,res) => {
 router.post('/insertRentedCars', (req,res) => {
     console.log(req.body)
 
-    let sql = 'INSERT INTO `rented cars` SET ?'
+    let sql = 'INSERT INTO `rented_cars` SET ?'
     let data = {
         loanerCarID: req.body.loanerCarID,
         customerID: req.body.customerID
@@ -236,7 +265,7 @@ router.post('/insertSales', (req,res) => {
 router.post('/insertSalesEmployee', (req,res) => {
     console.log(req.body)
 
-    let sql = 'INSERT INTO `sales employee` SET ?'
+    let sql = 'INSERT INTO `sales_employee` SET ?'
     let data = {
         employeeID: req.body.employeeID
     } 
@@ -250,7 +279,7 @@ router.post('/insertSalesEmployee', (req,res) => {
 router.post('/insertServiceManager', (req,res) => {
     console.log(req.body)
 
-    let sql = 'INSERT INTO `service managere` SET ?'
+    let sql = 'INSERT INTO `service_manager` SET ?'
     let data = {
         employeeID: req.body.employeeID
     } 
@@ -264,7 +293,7 @@ router.post('/insertServiceManager', (req,res) => {
 router.post('/insertTradeIn', (req,res) => {
     console.log(req.body)
 
-    let sql = 'INSERT INTO `trade in` SET ?'
+    let sql = 'INSERT INTO `trade_in` SET ?'
     let data = {
         customerID: req.body.customerID,
         carID: req.body.carID,
@@ -277,17 +306,5 @@ router.post('/insertTradeIn', (req,res) => {
     res.redirect('/database')
 })
 // ----------------------------INSERT END----------------------------
-
-// ----------------------------SELECT ALL START----------------------------
-router.get('/database/retrieve:table', (req,res) => {
-    let sql = `SELECT * FROM ${req.params.table}`
-    
-    console.log(sql)
-    connection.query(sql, (err, data, fields) => {
-        if (err) throw err
-        res.send(data)
-    })
-})
-// ----------------------------SELECT ALL END----------------------------
 
 module.exports = router

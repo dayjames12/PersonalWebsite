@@ -1,4 +1,3 @@
-
 var total;  //total posts
 
 function regVal(){
