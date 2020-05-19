@@ -24,8 +24,6 @@ router.delete('/database/delete/:table/:name/:number', (req,res) =>{
     console.log(sql)
     connection.query(sql, (err, data, fields) =>{
         if (err) {
-            // res.send(status, body): Use res.status(status).send(body)
-            // res.send(false, errorr)
             var status = {'worked':'false','message':`${err.code}`}
             res.send(status)
             return console.log(err);
@@ -34,6 +32,23 @@ router.delete('/database/delete/:table/:name/:number', (req,res) =>{
         res.send(data)
     })
 })
+
+
+// ----------------------------UPDATE----------------------------
+router.post('/database/update/:table', (req, res) =>{
+    let sql = `UPDATE ${req.params.table} SET ? WHERE id = ?`
+
+    console.log(sql);
+    connection.query(sql, (err, data, fields) =>{
+        if (err) {
+            return console.log(err);
+        }
+        res.send(data)
+    })
+    
+})
+
+// res.render('651-database-project/database.hbs', {message: 'Worked!'})
 
 
 // ----------------------------INSERT START----------------------------
@@ -48,11 +63,13 @@ router.post('/insertCar', (req,res) => {
         carTypeID: req.body.carTypeID
     } 
     let query = connection.query(sql, data, (err,res) => {
-        if (err) throw err
-        console.log(res)
+        if (err){
+            return console.log(err);
+        }
     })
     res.redirect('/database')
 })
+
 // insert car features
 router.post('/insertCarFeature', (req,res) => {
     console.log(req.body)
@@ -65,8 +82,9 @@ router.post('/insertCarFeature', (req,res) => {
         description: req.body.description
     } 
     let query = connection.query(sql, data, (err,res) => {
-        if (err) throw err
-        console.log(res)
+        if (err){
+            return console.log(err);
+        }
     })
     res.redirect('/database')
 })
@@ -82,8 +100,9 @@ router.post('/insertCarType', (req,res) => {
         color: req.body.color
     } 
     let query = connection.query(sql, data, (err,res) => {
-        if (err) throw err
-        console.log(res)
+        if (err){
+            return console.log(err);
+        }
     })
     res.redirect('/database')
 })
@@ -98,8 +117,9 @@ router.post('/insertCustomer', (req,res) => {
         phone: req.body.phone
     } 
     let query = connection.query(sql, data, (err,res) => {
-        if (err) throw err
-        console.log(res)
+        if (err){
+            return console.log(err);
+        }
     })
     res.redirect('/database')
 })
@@ -114,8 +134,9 @@ router.post('/insertCustomerPreference', (req,res) => {
         budget: req.body.budget
     } 
     let query = connection.query(sql, data, (err,res) => {
-        if (err) throw err
-        console.log(res)
+        if (err){
+            return console.log(err);
+        }
     })
     res.redirect('/database')
 })
@@ -130,8 +151,9 @@ router.post('/insertEmployee', (req,res) => {
         hours: req.body.hours
     } 
     let query = connection.query(sql, data, (err,res) => {
-        if (err) throw err
-        console.log(res)
+        if (err){
+            return console.log(err);
+        }
     })
     res.redirect('/database')
 })
@@ -144,8 +166,9 @@ router.post('/insertLoanerCar', (req,res) => {
         carID: req.body.carID
     } 
     let query = connection.query(sql, data, (err,res) => {
-        if (err) throw err
-        console.log(res)
+        if (err){
+            return console.log(err);
+        }
     })
     res.redirect('/database')
 })
@@ -158,8 +181,9 @@ router.post('/insertMechanic', (req,res) => {
         employeeID: req.body.employeeID
     } 
     let query = connection.query(sql, data, (err,res) => {
-        if (err) throw err
-        console.log(res)
+        if (err){
+            return console.log(err);
+        }
     })
     res.redirect('/database')
 })
@@ -172,8 +196,9 @@ router.post('/insertParts', (req,res) => {
         cost: req.body.cost
     } 
     let query = connection.query(sql, data, (err,res) => {
-        if (err) throw err
-        console.log(res)
+        if (err){
+            return console.log(err);
+        }
     })
     res.redirect('/database')
 })
@@ -186,8 +211,9 @@ router.post('/insertPartsEmployee', (req,res) => {
         employeeID: req.body.employeeID
     } 
     let query = connection.query(sql, data, (err,res) => {
-        if (err) throw err
-        console.log(res)
+        if (err){
+            return console.log(err);
+        }
     })
     res.redirect('/database')
 })
@@ -203,8 +229,9 @@ router.post('/insertPartsUsed', (req,res) => {
         partID: req.body.partID
     } 
     let query = connection.query(sql, data, (err,res) => {
-        if (err) throw err
-        console.log(res)
+        if (err){
+            return console.log(err);
+        }
     })
     res.redirect('/database')
 })
@@ -218,8 +245,9 @@ router.post('/insertRentedCars', (req,res) => {
         customerID: req.body.customerID
     } 
     let query = connection.query(sql, data, (err,res) => {
-        if (err) throw err
-        console.log(res)
+        if (err){
+            return console.log(err);
+        }
     })
     res.redirect('/database')
 })
@@ -237,8 +265,9 @@ router.post('/insertRepair', (req,res) => {
         cost: req.body.cost
     } 
     let query = connection.query(sql, data, (err,res) => {
-        if (err) throw err
-        console.log(res)
+        if (err){
+            return console.log(err);
+        }
     })
     res.redirect('/database')
 })
@@ -256,8 +285,9 @@ router.post('/insertSales', (req,res) => {
         partID: req.body.partID
     } 
     let query = connection.query(sql, data, (err,res) => {
-        if (err) throw err
-        console.log(res)
+        if (err){
+            return console.log(err);
+        }
     })
     res.redirect('/database')
 })
@@ -270,8 +300,9 @@ router.post('/insertSalesEmployee', (req,res) => {
         employeeID: req.body.employeeID
     } 
     let query = connection.query(sql, data, (err,res) => {
-        if (err) throw err
-        console.log(res)
+        if (err){
+            return console.log(err);
+        }
     })
     res.redirect('/database')
 })
@@ -284,8 +315,9 @@ router.post('/insertServiceManager', (req,res) => {
         employeeID: req.body.employeeID
     } 
     let query = connection.query(sql, data, (err,res) => {
-        if (err) throw err
-        console.log(res)
+        if (err){
+            return console.log(err);
+        }
     })
     res.redirect('/database')
 })
@@ -300,8 +332,9 @@ router.post('/insertTradeIn', (req,res) => {
         value: req.body.value
     } 
     let query = connection.query(sql, data, (err,res) => {
-        if (err) throw err
-        console.log(res)
+        if (err){
+            return console.log(err);
+        }
     })
     res.redirect('/database')
 })

@@ -5,7 +5,7 @@ $("#insert_table_select").on("change", function() {
     // show selected table and hide all others
     $("#" + $(this).val()).show().siblings().hide()
     // show the table drop down form 
-    $("#insert_table_form").show()  
+    $("#insert_table_form").show()
 })
 
 // ----------------------------TAB SWITCHER----------------------------
@@ -91,7 +91,7 @@ $('#insert_table_select').on('change', function() {
         for (i = 0; i < tableKeys.length; i++) {
             columnsString += "<th>" + tableKeys[i] + "</th>"
         }
-        columnsString += '<th>Edit</th> <th>Delete</th>'              
+        columnsString += '<th>Delete</th>'              
 
         // td rows
         var tableData = ''
@@ -99,13 +99,10 @@ $('#insert_table_select').on('change', function() {
             tableData += '<tr>'
             for (j = 0; j < tableKeys.length; j++){
                 
-                tableData += '<td>' + data[i][tableKeys[j]] + '</td>'
+                tableData += '<td style="text-align: center">' + data[i][tableKeys[j]] + '</td>'
             }
             tableData += `\
-                <td>\
-                    <a href="">Edit</a>\
-                </td>\
-                <td>\
+                <td style="text-align: center">\
                     <button class=\'button delete is-danger is-light is-outlined\' \
                         data-name=\'${tableKeys[0]}\' data-id=\'${data[i][tableKeys[0]]}\'
                     >\
@@ -118,8 +115,8 @@ $('#insert_table_select').on('change', function() {
 
         // html for the table_container div
         document.getElementById("table_container").innerHTML = `
-        <div class="block">
-            <table class="table is-striped">
+
+            <table class="table is-striped is-bordered is-hoverable" style="margin-left: auto; margin-right: auto;">
 
                 <thead>
                     <tr>
@@ -132,7 +129,7 @@ $('#insert_table_select').on('change', function() {
                 </tbody>
 
             </table>
-        </div>    
+  
         `
     }
 })

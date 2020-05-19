@@ -1,6 +1,6 @@
 module.exports = function(app, passport) {
     app.get('/database', isLoggedIn, function(req, res){
-    res.render('651-database-project/database.hbs', {title: 'Database', user:req.user})
+    res.render('651-database-project/database.hbs', {title: 'Database', message: req.flash('message')})
     })
 
     app.get('/database/login', function(req, res){
