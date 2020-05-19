@@ -76,7 +76,7 @@
 
           <div class="field">
             <label class="label">Car Type ID</label>
-            <input type="number" class="input" name="carTypeID" placeholder="Enter Car Type ID" required>
+            <input type="number" class="input" name="carTypeID" placeholder="Enter Car Type ID" maxLength="7" required>
           </div>
 
           <div class="field">
@@ -88,22 +88,22 @@
         <form action="/insertCarFeature" method="POST" name="car_features" id="car_features" style="display:none">
           <div class="field">
             <label class="label">Car Type ID</label>
-            <input type="text" class="input" name="carTypeID" placeholder="Enter Car Type ID" required>
+            <input type="number" class="input" name="carTypeID" placeholder="Enter Car Type ID" maxLength="7" required>
           </div>
 
           <div class="field">
             <label class="label">Feature Name</label>
-            <input type="text" class="input" name="featureName" placeholder="Enter Feature Name" required>
+            <input type="text" class="input" name="featureName" placeholder="Enter Feature Name" maxLength="50" required>
           </div>
 
           <div class="field">
             <label class="label">Cost</label>
-            <input type="text"class="input" name="cost" placeholder="Enter Cost" required>
+            <input type="text"class="input" name="cost" placeholder="Enter Cost" maxLength="7" required>
           </div>
 
           <div class="field">
             <label class="label">Description</label>
-            <input type="textArea" class="input" name="description" placeholder="Enter Description" required>
+            <input type="textArea" class="textarea" name="description" placeholder="Enter Description"  maxLength="200" required>
           </div>
 
           <div class="field">
@@ -115,22 +115,22 @@
         <form action="/insertCarType" method="POST" name="car_type" id="car_type" style="display:none">
           <div class="field">
             <label class="label">Year</label>
-            <input type="text" class="input" name="year" placeholder="Enter Year" required>
+            <input type="number" class="input" name="year" placeholder="Enter Year" maxLength="4" required>
           </div>
 
           <div class="field">
             <label class="label">Make</label>
-            <input type="text" class="input" name="make" placeholder="Enter Make" required>
+            <input type="text" class="input" name="make" placeholder="Enter Make" maxLength="50" required>
           </div>
 
           <div class="field">
             <label class="label">Model</label>
-            <input type="text" class="input" name="model" placeholder="Enter Model" required>
+            <input type="text" class="input" name="model" placeholder="Enter Model" maxLength="50" required>
           </div>
 
           <div class="field">
             <label class="label">Color</label>
-            <input type="text" class="input" name="color" placeholder="Enter Color" required>
+            <input type="text" class="input" name="color" placeholder="Enter Color" maxLength="25" required>
           </div>          
 
           <div class="field">
@@ -142,17 +142,17 @@
         <form action="/insertCustomer" method="POST" name="customer" id="customer" style="display:none">
           <div class="field">
             <label class="label">Name</label>
-            <input type="text" class="input" name="name" placeholder="Enter Name" required>
+            <input type="text" class="input" name="name" placeholder="Enter Name" maxLength="25" required>
           </div>
 
           <div class="field">
             <label class="label">Address</label>
-            <input type="text" class="input" name="address" placeholder="Enter Address" required>
+            <input type="text" class="input" name="address" placeholder="Enter Address" maxLength="50" required>
           </div>
 
           <div class="field">
             <label class="label">Phone Number</label>
-            <input type="text" class="input" name="phone" placeholder="Enter Phone Number" required>
+            <input type="number" class="input" name="phone" placeholder="Enter Phone Number" maxLength="11" required>
           </div>
 
           <div class="field">
@@ -164,17 +164,17 @@
         <form action="/insertCustomerPreference" method="POST" name="customer_preference" id="customer_preference" style="display:none">
           <div class="field">
             <label class="label">Customer ID</label>
-            <input type="text" class="input" name="customerID" placeholder="Enter Customer ID" required>
+            <input type="number" class="input" name="customerID" placeholder="Enter Customer ID" maxLength="7" required>
           </div>
 
           <div class="field">
             <label class="label">Car Feature ID</label>
-            <input type="text" class="input" name="carFeatureID" placeholder="Enter Car Feature ID" required>
+            <input type="text" class="input" name="carFeatureID" placeholder="Enter Car Feature ID" maxLength="7" required>
           </div>
 
           <div class="field">
             <label class="label">Budget</label>
-            <input type="text" class="input" name="budget" placeholder="Enter Budget" required>
+            <input type="number" class="input" name="budget" placeholder="Enter Budget" maxLength="7" required>
           </div>
 
           <div class="field">
@@ -186,7 +186,7 @@
         <form action="/insertEmployee" method="POST" name="employee" id="employee" style="display:none">
           <div class="field">
             <label class="label">Employee Name</label>
-            <input type="text" class="input" name="name" placeholder="Enter Employee Name" required>
+            <input type="text" class="input" name="name" placeholder="Enter Employee Name" maxLength="25" required>
           </div>
 
           <div class="field">
@@ -196,7 +196,7 @@
 
           <div class="field">
             <label class="label">Hours</label>
-            <input type="text" class="input" name="hours" placeholder="Enter Hours" required>
+            <input type="number" class="input" name="hours" placeholder="Enter Hours"  maxLength="3" required>
           </div>
 
           <div class="field">
@@ -208,7 +208,7 @@
         <form action="/insertLoanerCar" method="POST" name="loaner_cars" id="loaner_cars" style="display:none">
           <div class="field">
             <label class="label">Car ID</label>
-            <input type="text" class="input" name="carID" placeholder="Enter Car ID" required>
+            <input type="number" class="input" name="carID" placeholder="Enter Car ID" maxLength="7" required>
           </div>
 
           <div class="field">
@@ -220,7 +220,7 @@
         <form action="/insertMechanic" method="POST" name="mechanic" id="mechanic" style="display:none">
           <div class="field">
             <label class="label">Employee ID</label>
-            <input type="text" class="input" name="employeeID" placeholder="Enter Employee ID" required>
+            <input type="number" class="input" name="employeeID" placeholder="Enter Employee ID" maxLength="7" required>
           </div>
 
           <div class="field">
@@ -232,7 +232,7 @@
         <form action="/insertParts" method="POST" name="parts" id="parts" style="display:none">
           <div class="field">
             <label class="label">Cost</label>
-            <input type="text" class="input" name="cost" placeholder="Enter cost" required>
+            <input type="number" class="input" name="cost" placeholder="Enter cost" maxLength="7" required>
           </div>
 
           <div class="field">
@@ -244,7 +244,7 @@
         <form action="/insertPartsEmployee" method="POST" name="parts_employee" id="parts_employee" style="display:none">
           <div class="field">
             <label class="label">Employee ID</label>
-            <input type="text" class="input" name="employeeID" placeholder="Enter Employee ID" required>
+            <input type="number" class="input" name="employeeID" placeholder="Enter Employee ID" maxLength="7" required>
           </div>
 
           <div class="field">
@@ -256,22 +256,22 @@
         <form action="/insertPartsUsed" method="POST" name="parts_used" id="parts_used" style="display:none">
           <div class="field">
             <label class="label">Quantity</label>
-            <input type="text" class="input" name="quantity" placeholder="Enter Quantity" required>
+            <input type="number" class="input" name="quantity" placeholder="Enter Quantity" maxLength="7" required>
           </div>
 
           <div class="field">
             <label class="label">Cost</label>
-            <input type="text" class="input" name="cost" placeholder="Enter Cost" required>
+            <input type="number" class="input" name="cost" placeholder="Enter Cost" maxLength="7" required>
           </div>
 
           <div class="field">
             <label class="label">Part ID</label>
-            <input type="text" class="input" name="partID" placeholder="Enter Part ID" required>
+            <input type="number" class="input" name="partID" placeholder="Enter Part ID" maxLength="7" required>
           </div>          
 
           <div class="field">
             <label class="label">Repair ID</label>
-            <input type="text" class="input" name="repairID" placeholder="Enter Repair ID" required>
+            <input type="number" class="input" name="repairID" placeholder="Enter Repair ID" maxLength="7" required>
           </div>          
 
           <div class="field">
@@ -283,12 +283,12 @@
         <form action="/insertRentedCars" method="POST" name="rented_cars" id="rented_cars" style="display:none">
           <div class="field">
             <label class="label">Customer ID</label>
-            <input type="text" class="input" name="customerID" placeholder="Enter Customer ID" required>
+            <input type="number" class="input" name="customerID" placeholder="Enter Customer ID" maxLength="7" required>
           </div>
 
           <div class="field">
             <label class="label">Loaner Car ID</label>
-            <input type="text" class="input" name="loanerCarID" placeholder="Enter Loaner Car ID" required>
+            <input type="number" class="input" name="loanerCarID" placeholder="Enter Loaner Car ID" maxLength="7" required>
           </div>
 
           <div class="field">
@@ -300,32 +300,32 @@
         <form action="/insertRepair" method="POST" name="repair" id="repair" style="display:none">
           <div class="field">
             <label class="label">Description</label>
-            <input type="text" class="input" name="description" placeholder="Enter Description" required>
+            <input type="textarea" class="input" name="description" placeholder="Enter Description" maxLength="7" required>
           </div>
 
           <div class="field">
             <label class="label">Cost</label>
-            <input type="text" class="input" name="cost" placeholder="Enter Cost" required>
+            <input type="number" class="input" name="cost" placeholder="Enter Cost" maxLength="7" required>
           </div>
           
           <div class="field">
             <label class="label">Car ID</label>
-            <input type="text" class="input" name="carID" placeholder="Enter Car ID" required>
+            <input type="number" class="input" name="carID" placeholder="Enter Car ID" maxLength="7" required>
           </div>
 
           <div class="field">
             <label class="label">Mechanic ID</label>
-            <input type="text" class="input" name="mechanicID" placeholder="Enter Mechanic ID" required>
+            <input type="number" class="input" name="mechanicID" placeholder="Enter Mechanic ID" maxLength="7" required>
           </div>
 
           <div class="field">
             <label class="label">Service Manager ID</label>
-            <input type="text" class="input" name="serviceManagerID" placeholder="Enter Service Manager ID" required>
+            <input type="number" class="input" name="serviceManagerID" placeholder="Enter Service Manager ID" maxLength="7" required>
           </div>
 
           <div class="field">
             <label class="label">Customer ID</label>
-            <input type="text" class="input" name="customerID" placeholder="Enter Customer ID" required>
+            <input type="number" class="input" name="customerID" placeholder="Enter Customer ID" maxLength="7" required>
           </div>
 
           <div class="field">
@@ -337,32 +337,32 @@
         <form action="/insertSales" method="POST" name="sales" id="sales" style="display:none">
           <div class="field">
             <label class="label">Sales Employee ID</label>
-            <input type="text" class="input" name="salesEmployeeID" placeholder="Enter Sales Employee ID" required>
+            <input type="number" class="input" name="salesEmployeeID" placeholder="Enter Sales Employee ID" maxLength="7" required>
           </div>
 
           <div class="field">
             <label class="label">Parts Employee ID</label>
-            <input type="text" class="input" name="partsEmployeeID" placeholder="Enter Parts Employee ID" required>
+            <input type="number" class="input" name="partsEmployeeID" placeholder="Enter Parts Employee ID" maxLength="7" required>
           </div>
           
           <div class="field">
             <label class="label">Customer ID</label>
-            <input type="text" class="input" name="customerID" placeholder="Enter Customer ID" required>
+            <input type="number" class="input" name="customerID" placeholder="Enter Customer ID" maxLength="7" required>
           </div>
 
           <div class="field">
             <label class="label">Car ID</label>
-            <input type="text" class="input" name="carID" placeholder="Enter Car ID" required>
+            <input type="number" class="input" name="carID" placeholder="Enter Car ID" maxLength="7" required>
           </div>
 
           <div class="field">
             <label class="label">Trade In ID</label>
-            <input type="text" class="input" name="tradeInID" placeholder="Enter Trade In ID" required>
+            <input type="number" class="input" name="tradeInID" placeholder="Enter Trade In ID" maxLength="7" required>
           </div>
 
           <div class="field">
             <label class="label">Part ID</label>
-            <input type="text" class="input" name="partID" placeholder="Enter Part ID" required>
+            <input type="number" class="input" name="partID" placeholder="Enter Part ID" maxLength="7" required>
           </div>
 
           <div class="field">
@@ -374,7 +374,7 @@
         <form action="/insertSalesEmployee" method="POST" name="sales_employee" id="sales_employee" style="display:none">
           <div class="field">
             <label class="label">Employee ID</label>
-            <input type="text" class="input" name="employeeID" placeholder="Enter Employee ID" required>
+            <input type="number" class="input" name="employeeID" placeholder="Enter Employee ID" maxLength="7" required>
           </div>
 
           <div class="field">
@@ -386,7 +386,7 @@
         <form action="/insertServiceManager" method="POST" name="service_manager" id="service_manager" style="display:none">
           <div class="field">
             <label class="label">Employee ID</label>
-            <input type="text" class="input" name="employeeID" placeholder="Enter Employee ID" required>
+            <input type="number" class="input" name="employeeID" placeholder="Enter Employee ID" maxLength="7" required>
           </div>
 
           <div class="field">
@@ -398,17 +398,17 @@
         <form action="/insertTradeIn" method="POST" name="trade_in" id="trade_in" style="display:none">
           <div class="field">
             <label class="label">Value</label>
-            <input type="text" class="input" name="value" placeholder="Enter Value" required>
+            <input type="number" class="input" name="value" placeholder="Enter Value" maxLength="7" required>
           </div>
 
           <div class="field">
             <label class="label">Customer ID</label>
-            <input type="text" class="input" name="customerID" placeholder="Enter Customer ID" required>
+            <input type="number" class="input" name="customerID" placeholder="Enter Customer ID" maxLength="7" required>
           </div>
           
           <div class="field">
             <label class="label">Car ID</label>
-            <input type="text" class="input" name="carID" placeholder="Enter Car ID" required>
+            <input type="number" class="input" name="carID" placeholder="Enter Car ID" maxLength="7" required>
           </div>
 
           <div class="field">
