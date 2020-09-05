@@ -29,7 +29,7 @@ body{
 
 .slideshow{
     flex: 1;
-    background-color: cadetblue;
+    background-color: lightslategrey;
     position: relative;
     overflow: hidden;
 }

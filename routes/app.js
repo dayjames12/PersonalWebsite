@@ -23,7 +23,7 @@ router.get('/projects', (req,res) => {
 
 // Adding small dog api tutorial I did from LearnWebCode on youtube
 router.get('/projects/dog', (req,res) => {
-    res.render('Projects/dog.hbs', {titel: 'Dog'})
+    res.render('Projects/dog.hbs', {title: 'Dogs'})
 })
 
 
