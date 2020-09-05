@@ -21,5 +21,10 @@ router.get('/projects', (req,res) => {
 //     res.render('651-database-project/database', {title: 'CSC651 Final Course Project'})
 // })
 
+// Adding small dog api tutorial I did from LearnWebCode on youtube
+router.get('/projects/dog', (req,res) => {
+    res.render('Projects/dog.hbs', {titel: 'Dog'})
+})
+
 
 module.exports = router
