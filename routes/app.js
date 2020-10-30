@@ -16,7 +16,7 @@ router.get('/projects', (req,res) => {
     res.render('projects', {title: 'Projects'})
 })
 
-// // get project page
+// get project page
 // router.get('/database', (req,res) => {
 //     res.render('651-database-project/database', {title: 'CSC651 Final Course Project'})
 // })
@@ -24,6 +24,11 @@ router.get('/projects', (req,res) => {
 // Adding small dog api tutorial I did from LearnWebCode on youtube
 router.get('/projects/dog', (req,res) => {
     res.render('Projects/dog.hbs', {title: 'Dogs'})
+})
+
+// Route for my CSC-413 Tank Game
+router.get('/projects/tankGame', (req,res) => {
+    res.render('Projects/tankGame.hbs', {title: 'Tank Game'})
 })
 
 
